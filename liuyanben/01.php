@@ -10,6 +10,8 @@
     //mysql_query($sql,$conn);
     if(!mysql_query($sql ,$conn)){
           echo mysql_error();
+          exit();
+    }else{
 
     	header("Location:./show.php");
     }

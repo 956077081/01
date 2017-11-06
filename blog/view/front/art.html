@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/art.css">
+</head>
+<body>
+    <header>
+        
+        <h4>欢迎来到博客网</h4>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.php">首页</a></li>
+            <li><a href="./artadd.php">发表文章</a></li>
+            <li>
+                <a href="./private.php">个人管理</a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </nav>
+    <div id="main">
+        <div id="lside" style="margin-right: 50px;">
+             <?php foreach($art as $a){ ?>
+            <article>
+                <h2><a href="art.php?art_id= <?php echo $a['art_id'];?>">  <?php echo $a['title'];?></a></h2>
+                <div class="entry_header">
+                    <time><?php echo date('Y/m/d',$a['pubtime']+$maketime);?></time>
+                    by
+                    <a href="#"><?php echo $a['nick'];?></a>
+                    <a class="catlink" href="#"><?php echo $a['catname'];?></a>
+                    <a class="comment" href="#"><?php echo $a['comm'];?> 条评论</a>
+                </div>
+                 <div class="entry_content">
+                    <p><?php echo $a['content'];?></p>  
+                </div>
+                  <?php if($a['pic']){?>
+                <div>
+                   
+                    <img src="./<?php echo $a['pic'];?>" style="width:30%;height:30%;" name="pic"/>
+                </div>
+                <?php }?>
+            </article>
+            <?php }?>
+          
+            <div id="comments">
+              <?php foreach($comment as $com){?>
+                <ol>
+                    <li>
+                       
+                          <!-- 图片加载不出 -->
+                        <img src="./<?php echo $user['pripic'];?> " alt="" name='pri' style="width:12%;height: 12%;"/>
+                        <cite><a href=""><?php echo $com['nick'];?></a></cite> <br>
+                        <time><?php echo date('Y年m月d日 H时i分',$com['pubtime']+$maketime);?></time>
+                    </li>
+                    <li>
+                        <?php echo $com['content'];?>
+                    </li>
+                </ol>
+                 <?php }?>
+            </div>
+           
+            <div id="respond" class="comment-respond" >
+                <h3>评论</h3>
+                <form action="#" method="post">
+                    <p>
+                 
+                    <p>
+                    <textarea name="content" cols="30" rows="5" aria-required="true"></textarea>
+                    <p>
+                    <input type="submit" value="Post Comment"><span style="font-size: 20">&nbsp;<?php echo $er;?></span>
+                    
+                    
+                </p>
+                </form>
+            </div>
+        </div>
+      
+    </div>
+    <footer>
+        Copyright &copy; 2015 · GeneratePress · WordPress
+    </footer>
+</body>
+</html>
