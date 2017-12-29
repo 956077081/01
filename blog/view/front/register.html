@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/art.css">
+<style>
+form {
+width:30%;
+margin:0 auto;
+}
+</style>
+</head>
+<body>
+ <a href="./login.php" style="margin-left: 30px; font-size: 15px; color: red;">返回登录页面</a>
+    <header>
+        <h1 style="text-align: center;">博客注册</h1>
+
+    </header>
+    <div id="main">
+        <div id="respond" class="comment-respond">
+            <form action="#" method="post">
+                <p>
+                <input placeholder="昵称" name="nick" type="text" value="" size="30">  
+                </p>
+                用户账号长度不低于6位
+                <p>
+                <input placeholder="用户名" name="name" type="text" value="" size="30">
+                </p>
+                用户密码长度不低于6位
+                <p>
+                <input placeholder="密码" name="password" type="password" value="" size="30">
+                </p>
+                 <p>
+                <input placeholder="再次输入密码" name="password1" type="password" value="" size="30">
+                </p>
+                *允许为空
+                 <p>
+                <input placeholder="Email" name="email" type="text" value="" size="30">     
+                </p>
+                <input type="submit" value="注册">
+                <span style="font-size: 15;"><?php echo $er;?></span>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
