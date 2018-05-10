@@ -1,0 +1,355 @@
+body {
+	font-family:"宋体"/*, Arial, Helvetica, sans-serif*/;
+	font-size:20px;
+	line-height:1.5;
+	margin:0px;
+	padding:0px;
+	background-color:white;
+}
+
+p{
+	padding:0px;
+	margin:0px;
+}
+ol,ul{
+	margin:0;
+}
+li{
+	*text-indent:72px;
+}
+
+table{
+	table-layout:fixed;
+	*border-collapse:collapse;
+	empty-cells:show;
+	word-wrap:break-word;
+	overflow:hidden;
+}
+
+.page {
+	z-index:100;
+	background:rgba(255,255,255,0.8);
+	margin:0px auto 0 auto;
+	padding-top:0px;
+	padding-bottom:45px;
+	width:720px;
+	position:relative;
+}
+
+.page_break {
+	page-break-before:always;
+}
+
+/*.head_title {
+	text-align:center;
+	margin-bottom:10px;
+	font-weight:bold;
+}
+.main_title {
+	letter-spacing:10px;
+	text-align:center;
+	font-size:25px;
+	height:30px;
+}
+.sub_title {
+	padding-left:30px;
+	letter-spacing:30px;
+	font-size:25px;
+	height:30px;
+}*/
+
+.head_title {
+	text-align:center;
+	margin-bottom:50px;
+	font-weight:bold;
+}
+.main_title {
+	letter-spacing:10px;
+	text-align:center;
+	font-size:40px;
+	height:45px;
+}
+.sub_title {
+	padding-left:30px;
+	letter-spacing:40px;
+	font-size:35px;
+	height:40px;
+}
+
+.sub_title_long {
+	letter-spacing:15px;
+	font-size:30px;
+	height:35px;
+}
+
+.head_table {
+	font-size:18px;
+	line-height:1.5;
+	width:720px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.head_table .blank_td {
+	text-align:right;
+	padding-right:2px;
+}
+.head_table .info_area {
+	border-bottom:1px solid #000;
+	text-align:left;
+	padding-left:2px;
+}
+.head_table .info_bottom {
+	text-align:left;
+	padding-left:2px;
+	text-decoration:underline;
+}
+.head_table .info_area_small {
+	border-bottom:1px solid #000;
+	text-align:left;
+	padding-left:2px;
+	font-size:16px;
+	line-height:1.5;
+	word-wrap:break-word ;
+	word-break: break-all;
+}
+.text_justify {
+	font-weight:bold;
+	text-align:justify;
+	text-justify:distribute-all-lines;
+	text-align-last:justify;
+	padding-left:2px;
+}
+.head_table .info_title_begin {
+	text-align:right;
+	padding-right:2px;
+	font-weight:bold;
+}
+.head_table .info_title_end {
+	text-align:left;
+	padding-left:2px;
+}
+
+.title_table {
+	font-size:24px;
+	font-weight:bold;
+	text-align:center;
+	letter-spacing:10px;
+	line-height:1.5;
+	width:720px;
+	padding:0px;
+	margin:0px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.content_table {
+	font-size:18px;
+	line-height:1.5;
+	width:720px;
+	border-left:1px solid #000;
+	border-right:1px solid #000;
+	border-top:1px solid #000;
+	padding:0px;
+	margin-top:10px;
+}
+.content_table .blank_td {
+	border-right:1px solid #999;
+	text-align:right;
+	padding-right:2px;
+}
+.content_table .info_area {
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	text-align:left;
+	padding-left:5px;
+}
+.content_table .info_title {
+	border-right:1px dashed #999;
+	border-bottom:1px solid #000;
+	text-align:center;
+	font-weight:bold;
+}
+.content_table .info_title_withoutbold {
+	border-right:1px dashed #000;
+	border-bottom:1px solid #000;
+	text-align:left;
+}
+.content_table .info_category_title {
+	border-right:1px solid #CCC;
+	border-bottom:1px solid #000;
+	text-align:left;
+	padding-left:5px;
+	font-weight:bold;
+}
+.content_table .info_sub_category_title {
+	border-right:1px dashed #000;
+	border-bottom:1px solid #000;
+	text-align:right;
+	padding-right:2px;
+	font-weight:500;
+}
+
+.content_table_without_margin {
+	font-size:18px;
+	line-height:1.5;
+	width:720px;
+	border-left:1px solid #000;
+	border-right:1px solid #000;
+	padding:0px;
+	margin:0px;
+}
+.content_table_without_margin .info_area {
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	text-align:left;
+	padding-left:5px;
+}
+.content_table_without_margin .info_title {
+	border-right:1px dashed #999;
+	border-bottom:1px solid #000;
+	text-align:center;
+	font-weight:bold;
+}
+
+.content_table_without_border {
+	font-size:18px;
+	line-height:1.5;
+	width:720px;
+	max-width:720px;
+	table-layout:fixed;
+	padding:0px;
+	margin:0px;
+}
+.content_table_without_border .info_block{
+	border:none;
+	text-indent:36px;
+	text-align:left;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	padding:0px 5px 0px 5px;
+	word-wrap:break-word ;
+	word-break: break-all;
+}
+.content_table_without_border .td_top_align{
+	vertical-align:top;
+}
+.content_table_without_border .info_area {
+	text-align:left;
+	padding-left:2px;
+}
+.content_table_without_border .info_title {
+	text-align:left;
+	font-weight:bold;
+}
+.content_table_without_border .info_center_title {
+	font-weight:bold;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+	line-height:1.5;
+}
+.content_table_without_border .info_center_title_shouci_special {
+	padding:0px;
+	margin:0px;
+	text-align:left;
+	font-weight:bold;
+	font-size:22px;
+	line-height:1.5;
+	letter-spacing:20px;
+	padding-left:70px;
+}
+.content_table_without_border .info_category_title{
+	text-align:right;
+	padding-right:2px;
+	font-weight:bold;
+}
+.content_table_without_border .sub_table {
+	vertical-align:text-top;
+}
+
+.content_table_without_border_sub {
+	font-size:18px;
+	line-height:1.5;
+	width:360px;
+	padding:0px;
+	margin:0px;
+}
+.content_table_without_border_sub .info_area {
+	text-align:left;
+	padding-left:2px;
+}
+.content_table_without_border_sub .info_title {
+	text-align:left;
+	font-weight:bold;
+}
+
+.blank{
+	height:20px;
+	width:720px;
+}
+.blank_hide{
+	height:20px;
+	width:720px;
+	display:none;
+}
+.content_table_inserted {
+	font-size:18px;
+	line-height:1.5;
+	text-align:center;
+	width:720px;
+	border:none;
+	margin-top:10px;
+	margin-bottom:20px;
+	table-layout:auto;
+	word-wrap:break-word;
+	overflow:hidden;
+}
+.content_table_inserted .info_area {
+	border-bottom:solid #333 1px;
+	padding:0px;
+}
+.content_table_inserted .blank {
+	height:auto;
+	border:none;
+	padding:0px;
+}
+.info_block table {border:1px #A0A0A0 solid;}
+.info_block table tr td { border:1px #A0A0A0 solid;}
+
+/*入院记录里面关于诊断的css*/
+.zhenduan {height:auto; line-height:25px; float:left;}
+.weimingzhenduan {height:auto; line-height:25px; float:left; font-size:13px;}
+.zhenduan_xiyi {height:auto; line-height:25px; float:left;}
+.weimingzhenduan_xiyi {height:auto; line-height:25px; float:left; font-size:13px;}
+/*病程记录里面关于诊断的css*/
+.bingcheng_max {height:100%; float:left;}
+.bingcheng_min {height:auto; float:left; font-size:13px;}
+.zhenduan_bingzheng {}
+.bingcheng_bingzheng {}
+
+.ajax_input{
+	height:18px;
+	font-size:16px;
+}
+
+.bingcheng_title{
+	cursor:pointer;
+}
+
+.hidden_info{
+	display:none;
+}
+
+.delete_one_bingcheng{
+	font-size:16px;
+	text-align:center;
+	cursor:pointer;
+}
+.doctor_signature{
+	text-align:right;
+	font-weight:bold;
+	padding-right:5px;
+}
+.huanzhe_jiashu_signature{
+	text-align:right;
+}

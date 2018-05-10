@@ -1,0 +1,380 @@
+/**************************************************
+*  Created:  2011-11-01
+*  Info:医嘱和处方管理前台CSS代码
+*  @Tiantanhehe (C)2011-3011 Tiantanhehe Inc.
+*  @Author DongJie <dj7229@126.com>
+*
+***************************************************/
+body {
+	margin:0px;
+	padding:0px;
+	font: 16px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+	background-color:#FFF;
+}
+h1, h2, h3, h4, h5, h6, p, form, input, ul, li{
+	margin:0;
+	padding:0;
+	border:none;
+}
+ul li {
+	list-style:none;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:none;
+}
+a img {
+	border:none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0px;
+	empty-cells:show;
+}
+.page {
+	margin:0px auto 0 auto;
+	padding-top:0px;
+	padding-bottom:45px;
+	width:832px;
+	position:relative;
+	min-height:600px;
+}
+.head_title {
+	text-align:center;
+	margin-bottom:20px;
+	font-weight:bold;
+}
+.main_title {
+	letter-spacing:10px;
+	text-align:center;
+	font-size:35px;
+	height:45px;
+}
+.sub_yizhu_title {
+	padding-left:20px;
+	letter-spacing:25px;
+	font-size:30px;
+	height:35px;
+}
+.sub_yizhu_title_long {
+	letter-spacing:15px;
+	font-size:30px;
+	height:35px;
+}
+.head_table {
+	font-size:18px;
+	line-height:1.2;
+	width:100%;
+	margin-bottom:15px;
+}
+.head_table .info_title {
+	text-align:right;
+	padding-right:2px;
+}
+.content_head_table .long_content {
+	text-align:center;
+}
+
+.content_head_table .double_line {
+	padding-left:2px;
+	padding-right:2px;
+}
+.content_table {
+	width:100%;
+	font-size:14px;
+	line-height:1.8;
+	text-align:center;
+	color:#000;
+}
+.content_table .warning{
+	color:#F00;
+}
+.content_table .new_added{
+	color:#0066FF;
+}
+.content_table .long_content {
+	text-align:left;
+}
+.content_table .long_content .no_blank{
+	padding-left:0px;
+}
+.content_table .long_content .hide{
+	display:none;
+}
+.content_table .editable {
+	cursor:pointer;
+}
+.content_table .editable_focus {
+	cursor:pointer;
+	background-color:#CBF1C9;
+}
+.content_table .add_area {
+	text-align:left;
+	padding:5px;
+}
+.edit_table {
+	padding-bottom:10px;
+	display:none;
+	width:900px;
+	background:#D2F0B2;
+	font-size:14px;
+	text-align:left;
+}
+.edit_table span {
+	margin-left:15px;
+}
+.edit_table .info_title {
+	margin-left:20px;
+	font-weight:bold;
+}
+.edit_table .content {
+	width:70%;
+}
+.edit_yizhu_button:hover {
+	background:url(./images/button_medium_hover.png) no-repeat;
+}
+.add_yizhu_button:hover {
+	background:url(./images/button_edit_long_hover.png) no-repeat;
+}
+.error_tips {
+	background:url(../images/error_tips.gif) no-repeat;
+	margin-left:20px;
+	padding-left:20px;
+	height:16px;
+	line-height:16px;
+	text-align:left;
+	color:red;
+	margin-bottom:8px;
+}
+.head_table .info_area {
+	border-bottom:1px solid #000;
+	text-align:left;
+	padding-left:2px;
+}
+.content_head_table {
+	width:100%;
+	font-size:16px;
+	line-height:1.5;
+	text-align:center;
+	font-weight:bold;
+	color:#06F;
+}
+.content_head_table td {
+	border:1px solid #6596AF;
+}
+.content_table tr {
+	border: none;
+}
+.content_table td {
+	padding:0px;
+	border-top:none;
+	border-left:1px solid #6596AF;
+	border-right:1px solid #6596AF;
+	border-bottom:1px solid #6596AF;
+}
+*+html .content_table td {
+	padding:1px;
+	border-top:none;
+	border-left:1px solid #6596AF;
+	border-right:1px solid #6596AF;
+	border-bottom:1px solid #6596AF;
+}
+.content_table .groupmate {
+	border-top:1px dashed #6596AF;
+	border-bottom:1px dashed #6596AF;
+}
+.content_table .editable_on_edit {
+	cursor:pointer;
+	background-color:#AFF1C9;
+	border: none;
+}
+.content_table .editable_partly_on_edit {
+	cursor:pointer;
+	background-color:#AFF1C9;
+	border: none;
+}
+.none_border {
+	border:none;
+}
+.ajax_form
+{
+	border:none;
+}
+.ajax_form li{
+	margin:5px 0px 5px 0px;
+}
+.ajax_form span{
+	margin-left:15px;
+}
+.input_type {
+	width:170px;
+	border:1px solid #6ABEFD;
+	height:18px;
+	line-height:18px;
+	margin-left:5px;
+	padding-left:2px;
+}
+.input_type_focus {
+	width:20%;
+	border:1px solid #00F;
+	height:18px;
+	line-height:18px;
+	margin-left:5px;
+	padding-left:2px;
+}
+.input_type_small {
+	width:80px;
+	border:1px solid #6ABEFD;
+	height:20px;
+	line-height:20px;
+	margin-left:5px;
+	padding-left:2px;
+}
+.input_type_small_focus {
+	width:10%;
+	border:1px solid #00F;
+	height:18px;
+	line-height:18px;
+	margin-left:5px;
+	padding-left:2px;
+}
+.input_type_full {
+	width:85%;
+	border:1px solid #6ABEFD;
+	height:18px;
+	line-height:18px;
+	margin-left:5px;
+	padding-left:2px;
+}
+.input_type_full_ls {
+	width:438px;
+	border:1px solid #6ABEFD;
+	height:18px;
+	line-height:18px;
+	margin-left:5px;
+	padding-left:2px;
+}
+.input_type_full_lscon {
+	width:440px;
+	border:1px solid #6ABEFD;
+	height:18px;
+	line-height:18px;
+	margin-left:5px;
+	padding-left:2px;
+}
+.input_type_full_focus {
+	width:85%;
+	border:1px solid #00F;
+	height:18px;
+	line-height:18px;
+	margin-left:5px;
+	padding-left:2px;
+}
+.select_type {
+	width:174px;
+	border:1px solid #6ABEFD;
+	height:22px;
+	line-height:18px;
+	margin-left:5px;
+	padding:2px;
+}
+.select_type_small{
+	width:100px;
+	border:1px solid #6ABEFD;
+	height:22px;
+	line-height:18px;
+	margin-left:5px;
+	padding:2px;
+}
+.edit_table li {
+	border-bottom:1px dotted #999;
+}
+.edit_yizhu_button {
+	background:url(./images/button_medium.png) no-repeat;
+	border:none;
+	height:25px;
+	line-height:23px;
+	width:100px;
+	text-align:center;
+	color:#fff;
+	cursor:pointer;
+	font-weight:bold;
+	margin:5px;
+}
+.edit_yizhu_button_alert{
+	background:url(./images/button_medium.png) no-repeat;
+	border:none;
+	height:25px;
+	line-height:23px;
+	width:100px;
+	text-align:center;
+	color:red;
+	cursor:pointer;
+	font-weight:bold;
+	margin:5px;
+}
+.add_yizhu_button {
+	background:url(./images/button_edit_long.png) no-repeat;
+	border:none;
+	height:25px;
+	line-height:23px;
+	width:140px;
+	text-align:center;
+	color:#fff;
+	cursor:pointer;
+	font-weight:bold;
+}
+.editble_partly {
+	cursor:pointer;
+}
+.float_right{
+	text-align:right;
+	float:right;
+	padding-right:2px;
+	border:none;
+	line-height:1.5;
+}
+.float_left{
+	text-align:left;
+	float:left;
+	padding-left:2px;
+	border:none;
+}
+.float_left_full_width{
+	text-align:left;
+	float:left;
+	width:99%;
+	border:none;
+	height:100%;
+}
+.fix_left{
+	text-align:left;
+	border:none;
+}
+
+.fix_right{
+	text-align:right;
+	padding-right:2px;
+	border:none;
+}
+
+.page_info{
+	color:black;
+	text-decoration:none;
+	margin-left:2px;
+	margin-right:2px;
+}
+.page_info:hover{
+	color:blue;
+	text-decoration:underline;
+}
+.yizhuzhengli_info{
+	width:100%;
+	text-align:center;
+}
+.datetime_picker{
+	border:none;
+	background:url(./images/datetime_picker.gif);
+}

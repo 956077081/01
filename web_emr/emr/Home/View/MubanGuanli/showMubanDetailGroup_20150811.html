@@ -1,0 +1,135 @@
+<html >
+
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/tiantan_ui.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/list_view.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/user_manager.css" media="all" />
+
+		<load href='__PUBLIC__/js/jquery-1.7.2.js' />
+		<load href='__PUBLIC__/js/jquery.form.js' />
+		<load href='__PUBLIC__/js/tiantan_ui.js' />
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/js/artDialog/artDialog.js?skin=aero" ></script>
+</head>
+
+<body>
+	<div class="list_title">
+		<div class="list_title_span">
+			当前模板套餐:{$muban_info.mingcheng}
+		</div>
+	</div>
+	<div class="overview">
+			<div class="left_info_block">
+				<div class="sub_title"><img src="__PUBLIC__/css/images/zhuyuanxinxi/jibenxinxi.png" height="20" style="vertical-align:top">基本信息</div>
+					<div class="info_block_area">
+						<div class="info_block">模板套餐名称：{$muban_info.mingcheng}</div>
+						<div class="info_block">模板类型：{$muban_info.muban_leixing}</div>
+						<div class="info_block">模板病历类型：{$muban_info.muban_bingli_type}</div>
+						<div class="info_block">模板科别：{$muban_info.muban_kebie}</div>
+						<div class="info_block">所属医生：{$muban_info.suoshu_user_name}</div>
+						<div class="info_block">所属科室：{$muban_info.suoshu_department_name}</div>
+						<div class="info_block">所属医院：{$muban_info.suoshu_yiyuan_name}</div>
+						<input type="button" id="xougai_muban" class="submit_button" value="修改信息" />
+					</div>
+			</div>
+	</div>
+	</div>
+
+<script type="text/javascript">
+	server_url = "{$Think.config.WEB_HOST}";
+	muban_id = "{$muban_info.muban_id}";
+	muban_bingli_type = "{$muban_info.muban_bingli_type}";
+	muban_kebie = "{$muban_info.muban_kebie}";
+	user_id = "{$_SESSION.user_id}";
+	user_department = "{$_SESSION.user_department}";
+	yiyuan_id = "{$_SESSION.yiyuan_id}"
+
+	$("#xougai_muban").click(function(){
+		art.dialog({
+			id:"zengjiamuban_dialog",
+			title:"编辑模板",
+			content:'<form class="add_form" method="post" action="__ROOT__/Common/MubanGuanli/updateMubanBingliGroup">'+
+								'<table>'+
+									'<tr>'+
+										'<td style="text-align:right">请输入模板名称：</td>'+
+										'<td><input name="mingcheng" value="{$muban_info.mingcheng}"/></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">请选择所增加的模板的类型：</td>'+
+										'<td>'+
+											'<select name="muban_leixing"  class="select_name">'+
+												'<option value="{$muban_info.muban_leixing}">{$muban_info.muban_leixing}</option>'+
+												'<option value="公共模板">公共模板</option>'+
+												'<option value="科室模板">科室模板</option>'+
+												'<option value="个人模板">个人模板</option>'+
+											'</select>'+
+										'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">请选择模板的科别：</td>'+
+										'<td>'+
+											'<select name="muban_kebie"  class="select_name">'+
+												'<option value="{$muban_info.muban_kebie}">{$muban_info.muban_kebie}</option>'+
+												'<option value="内科">内科</option>'+
+												'<option value="外科">外科</option>'+
+												'<option value="妇科">妇科</option>'+
+												'<option value="儿科">儿科</option>'+
+												'<option value="中医科">中医科</option>'+
+												'<option value="其它">其它</option>'+
+											'</select>'+
+										'</td>'+
+									'</tr>'+
+									// '<tr>'+
+									// 	'<td style="text-align:right">请选择模板的文档类型：</td>'+
+									// 	'<td>'+
+									// 		'<select name="muban_bingli_type"  class="select_name">'+
+									// 			'<option value="{$muban_info.muban_bingli_type}">{$muban_info.muban_bingli_type}</option>'+
+									// 			'<option value="病案首页">病案首页</option>'+
+									// 			'<option value="入院记录">入院记录</option>'+
+									// 			'<option value="病程记录">病程记录</option>'+
+									// 			'<option value="出院记录">出院记录</option>'+
+									// 			'<option value="知情同意书">知情同意书</option>'+
+									// 			'<option value="治疗处置记录">治疗处置记录</option>'+
+									// 			'<option value="护理记录">护理记录</option>'+
+									// 		'</select>'+
+									// 	'</td>'+
+									// '</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">请输入模板别称(维语名字等)：</td>'+
+										'<td><input name="second_mingcheng" value="{$muban_info.second_mingcheng}"/></td>'+
+									'</tr>'+
+									// '<tr>'+
+									// 	'<td style="text-align:right"><input type="checkbox" name="if_user_default_format" value="true" >是否使用通用模板格式：</input></td>'+
+									// 	'<td></td>'+
+									// '</tr>'+
+									'<tr>'+
+										'<td colspan="2">'+
+											'<input type="hidden" name="muban_id" value="{$muban_info.muban_id}" />'+
+											'<input type="submit" class="submit_button" value="修 改" />'+
+											'<input type="button" id="cancel_add" class="submit_button" value="取 消" />'+
+										'</td>'+
+									'</tr>'+
+								'</table>'+
+							'</form>',
+			lock: true,
+			padding:5,
+			drag: false,
+			resize: false,
+			fixed: true,
+			close:function(){
+				$("body").eq(0).css("overflow","scroll");
+			},
+			init: function () {
+				$("body").eq(0).css("overflow","hidden");
+				$("#cancel_add").click(function(){
+					art.dialog.list['zengjiamuban_dialog'].close();
+				});
+			}
+		});
+	});
+	
+</script>
+</body>
+</html>

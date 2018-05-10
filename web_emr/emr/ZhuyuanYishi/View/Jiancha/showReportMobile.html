@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jianyan_baogao.css" media="all" />
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js"></script> 
+	<title>检验结果报告</title>
+</head>
+		<div class="one_page_jianyan_jiancha_baogao" style="width:100%">
+			<div class="head_title" style="width:100%">
+				<div class="main_title">{$Think.config.hospital_name}</div>
+				<div class="sub_title_report">{$jiancha_shenqing_info.jiancha_mingcheng}检验报告单</div>
+			</div>
+			<ul class="jiancha_info">
+				<li>姓名:<span>{$patient_basic_info.xingming}</span></li>
+				<li>性别:<span>{$patient_basic_info.xingbie}</span></li>
+				<li>年龄:<span>{$patient_basic_info.nianling}</span></li>
+				<li>类别:<span>{$jiancha_result_info.zhixing_type}</span></li>
+				<li>{$jiancha_result_info.zhixing_type}号:<span>{$jiancha_result_info.zhixing_id}</span></li>
+				<li>检验编号:<span>{$jiancha_result_info.relate_jiancha_shenqing_id}</span></li>
+			</ul>
+			<ul class="jiancha_info">
+				<li>送检科室:<span>{$jiancha_shenqing_info.shenqing_keshi_name}</span></li>
+				<li>送检医师:<span>{$jiancha_shenqing_info.shenqing_zhe_name}</span></li>
+				<li>申请时间:<span>{$jiancha_shenqing_info.shenqing_time}</span></li>
+				<li>送检标本:<span>{$jiancha_shenqing_info.songjian_wu}</span></li>
+			</ul>
+		<if condition="$jiancha_name!='痰常规+检菌'&&$jiancha_name!='便常规'">
+			<if condition="$format_type=='dingxinganddingliang'">
+				<table id="3" border="1" cellpadding="0" cellspacing="0" class="baogao_table" style="width:100%">
+						<tr class="baogao_table_title">
+							<td align="left">名称</td>
+							<td align="center">检查结果</td>
+							<td align="center">数值</td>
+							<td width="40" align="center">提示</td>
+							<td align="center">参考值</td>
+						</tr>
+						<volist name="report_result" id="report_result" key="number">
+							<if condition="$report_result['yichang_tag']=='true' ">
+							<tr style="background-color:#FF8080;" class="jiancha_result_one_row" result_id="{$report_result.id}">
+							<else />
+							<tr class="jiancha_result_one_row" result_id="{$report_result.id}">
+							</if>
+			
+								<td>{$report_result.yingwen_mingcheng}&nbsp;{$report_result.zhongwen_mingcheng}</td>
+								<td align="center">{$report_result.jiancha_result_dingxing}</td>
+								<td align="center" style="word-break: normal;word-wrap: break-word;">{$report_result.jiancha_result_dingliang}&nbsp;{$report_result.danwei}</td>
+								<td align="center"	class="jieguo_shuoming">{$report_result.shuoming}</td>
+								<td align="center">{$report_result.cankaozhi}</td>
+							</tr>
+						</volist>
+						<tr>
+							<td colspan="5">备注:{$jiancha_result_info.beizhu}</td>
+						</tr>
+				</table>
+			<else/>
+				<table id="3" border="1" cellpadding="0" cellspacing="0" class="baogao_table">
+						<tr class="baogao_table_title">
+							<td width="30" align="center">序号</td>
+							<td width="120" align="left">代号</td>
+							<td width="150" align="left">中文名称</td>
+							<td width="130"	align="center">检查结果</td>
+							<td align="center">提示</td>
+							<td  align="center">参考值</td>
+							<td	align="left">单位</td>
+						</tr>
+						<volist name="report_result" id="report_result" key="number">
+							<if condition="$report_result['yichang_tag']=='true'">
+							<tr style="background-color:#FF8080;" class="jiancha_result_one_row" result_id="{$report_result.id}">
+							<else />
+							<tr>
+							</if>
+								<td name="shujuxiang">{$number}</td>
+								<td>{$report_result.yingwen_mingcheng}</td>
+								<td>{$report_result.zhongwen_mingcheng}</td>
+								<td align="center">{$report_result.jiancha_result_dingxing}{$report_result.jiancha_result_dingliang}</td>
+								<td align="center"	class="jieguo_shuoming">{$report_result.shuoming}</td>
+								<td align="center">{$report_result.cankaozhi}</td>
+								<td>{$report_result.danwei}</td>
+							</tr>
+						</volist>
+						<tr>
+							<td colspan="7">备注:{$jiancha_result_info.beizhu}</td>
+						</tr>
+				</table>
+		</if>
+			 <ul class="jiancha_info">
+				<li>检验时间:<span>{$jiancha_result_info.jiancha_time}</span></li>
+				<li>检验者:<span>{$jiancha_result_info.jiancha_zhe_name}</span></li>
+				<li>核对者:<span>{$jiancha_result_info.hedui_zhe_name}</span></li>
+			</ul>
+			<div style="clear:both;"></div>
+			 <div class="shuoming">*此份检查报告只对此份标本负责，在核对者签名后有效</div>
+				<div class="jianyan_jiancha"></div>
+	</div>
+<style type="text/css">
+	.one_page_jianyan_jiancha_baogao{
+		margin-bottom:230px;
+	}
+	.jianyan_jiancha {
+		width:90%;
+		height:260px;
+		margin:0px;
+		padding:0px;
+		position:fixed;
+		top:260px;
+		border-top:5px solid #015079;
+		overflow:auto;
+		z-index:100;
+		display:none;
+		border:2px solid #015079;
+		background-color:#279bce;
+		-moz-border-radius:10px;
+		-webkit-border-radius:10px;
+		border-radius:10px;
+	}
+	ul.jiancha_info{margin:0px;padding:0;width:100%}
+	ul.jiancha_info li{list-style-type:none;float:left;margin-left:10px;height:30px;}
+	ul.jiancha_info li span{border-bottom:1px solid #000;padding:0 5px;}
+</style>
+<script type="text/javascript">
+	server_url = "{$Think.config.WEB_HOST}";
+	
+	//检验检查时间轴  
+	$('.jiancha_result_one_row').live('click',function(){
+		var id = $(this).attr('result_id');
+		$('.jianyan_jiancha').show();
+		var left = $(".baogao_table_title").offset().left + ($(".baogao_table_title").width()-$(".jianyan_jiancha").width())/2;
+		$(".jianyan_jiancha").css("left",left);
+
+		$.post("/tiantan_emr/Jianyan/Xiangmu/resultShijianZhou",{id:id},function(data){
+			$('.jianyan_jiancha').html('<div style="color:#ff0; font-size:18px;font-weight:bolder; margin-left:350px;">'+data.huabu.yingwen_mingcheng+'<span class="jianyan_jiancha_closed" style="font-size:22px;float:right;cursor:pointer;margin-right:5px;color:red;margin-top:5px;border:2px solid #f00;border-radius:15px;width:22px;height:22px;display:block;text-align:center;line-height:20px">×</span></div><canvas id="jianyan_jiancha" height="200px" width="'+(data.huabu.width+1)+'px;"></canvas>');
+			var jianyan_jiancha = document.getElementById('jianyan_jiancha');
+			var jianyan_jiancha = jianyan_jiancha.getContext('2d');
+			//循环data变
+			jianyan_jiancha.moveTo(data.result_list[0].x_pos,data.result_list[0].y_pos);//第一个起点
+			jianyan_jiancha.font ="normal 14px sans-serif";
+			if(data.result_list[0].shuoming!="√")
+				jianyan_jiancha.fillStyle="red";
+			else
+				jianyan_jiancha.fillStyle="white";
+			jianyan_jiancha.fillText((data.result_list[0].jiancha_result_dingliang+data.result_list[0].danwei+data.result_list[0].shuoming),(data.result_list[0].x_pos-10),(data.result_list[0].y_pos-12));
+			jianyan_jiancha.fillText(data.result_list[0].jiancha_time,(data.result_list[0].x_pos-35),(data.result_list[0].y_pos+15));
+			
+			for(var i=1;i<data.result_list.length;i++)
+			{
+				jianyan_jiancha.lineTo(data.result_list[i].x_pos,data.result_list[i].y_pos);
+				if(data.result_list[i].shuoming!="√")
+					jianyan_jiancha.fillStyle="red";
+				else
+					jianyan_jiancha.fillStyle="white";
+				jianyan_jiancha.fillText((data.result_list[i].jiancha_result_dingliang+data.result_list[i].danwei+data.result_list[i].shuoming),(data.result_list[i].x_pos-10),(data.result_list[i].y_pos-12));
+				jianyan_jiancha.fillText(data.result_list[i].jiancha_time,(data.result_list[i].x_pos-35),(data.result_list[i].y_pos+15));
+			}
+			jianyan_jiancha.lineWidth=2;
+			jianyan_jiancha.strokeStyle = 'yellow';
+			jianyan_jiancha.stroke();
+			
+			for(var i=0;i<data.result_list.length;i++)
+			{
+				jianyan_jiancha.beginPath();
+				if (data.result_list[i].id == id)
+					jianyan_jiancha.arc(data.result_list[i].x_pos,data.result_list[i].y_pos,3,0,Math.PI*2,false);
+				else
+					jianyan_jiancha.arc(data.result_list[i].x_pos,data.result_list[i].y_pos,1,0,Math.PI*2,false);
+				jianyan_jiancha.closePath();
+				jianyan_jiancha.lineWidth = 5;
+				if(data.result_list[i].shuoming!="√")
+					jianyan_jiancha.fillStyle="red";
+				else
+					jianyan_jiancha.fillStyle="white";
+				jianyan_jiancha.stroke();
+			}
+		},"json");
+	})
+	$('.jianyan_jiancha_closed').click(function(){
+		$('.jianyan_jiancha').hide();
+	});
+	
+	$(".one_page_jianyan_jiancha_baogao").click(function(e) {
+		//alert($(e.target).parent().attr("class"));
+		if($(e.target).parent().attr("class")!="jiancha_result_one_row") {
+			$('.jianyan_jiancha').hide();
+			$('.jianyan_jiancha_top').hide();
+		}
+	});
+</script>
+
+</body>
+
+</html>

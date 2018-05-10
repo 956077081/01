@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/themes/base/jquery.ui.all.css"/>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/css/TiantanMathml.css'/>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/css/teditor.css'/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/printer_control.css"/>
+		
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.16.custom.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.scrollto.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.qtip-1.0.0-rc3.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/tiantan_ui.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/Lodop_jquery_plugin.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/printer_control.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/artDialog/artDialog.js?skin=blue" ></script>
+	<title>病历编辑</title>
+</head>
+
+<body>
+<div class="page">
+	<br />
+	<if condition="$bingli_info['bingli_type']=='住院病案首页'">
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/binganshouye.css" />
+	<else />
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/binglijilu.css" />
+	</if>
+	<div id="bingli_content" name="content" <if condition='$editable != "no"'>contenteditable="true"</if> style="min-height:500px;">
+		{$bingli_info.content}
+	</div>
+</div>
+<div id="auto_slelect_options_area">
+	
+</div>
+<script type="text/javascript">
+	server_url = "{$Think.config.WEB_HOST}";
+	action_url = "http://{$Think.config.WEB_HOST}/web_emr/Home/BingliEditor/saveBingli";
+	zhuyuan_id = "{$bingli_info.zhuyuan_id}";
+	bingli_type = "{$bingli_info.bingli_type}";
+	yiyuan_id = "{$bingli_info.yiyuan_id}";
+	document_name = "{$bingli_info.bingli_type}";
+	document_id = "{$bingli_info.zhuyuan_id}";
+	document_relate_table = "{$bingli_info.bingli_type}";
+	patient_xingming = "{$zhuyuan_basic_info.xingming}";
+	var editable = "{$editable}";
+		$(function(){
+			if(editable!=null && editable=="no") {}
+			else {
+				//病历编辑器各种参数
+				revise = "{$Think.config.revise_mode}";
+				multi_media_engine = "{$Think.config.multi_media_engine}";
+				show_page_number ="{$Think.config.multi_media_engine}";
+				is_auto_save = "{$Think.config.is_auto_save}";
+				auto_save_interval = {$Think.config.auto_save_interval};
+				printControlInitial();
+			}
+		});
+</script>
+<if condition="$browser_type == 'ie'">
+	<script type="text/javascript" src="__PUBLIC__/js/ajax_editor_ie.js" ></script>
+<else />
+	<script type="text/javascript" src="__PUBLIC__/js/ajax_editor.js" ></script>
+</if>
+</body>
+</html>

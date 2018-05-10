@@ -1,0 +1,62 @@
+/*
+	@Name:TiantanMathml.js
+	@Author:Dongjie
+	@Copyright:Tiantanhehe 2013
+	@Latest Update:2013-07-20
+*/
+
+#formula{
+	font-size:0.9em;
+	display:inline;
+	position:relative;
+	text-indent:0;
+	border:0;
+	padding:0;
+	padding-right:6.875em;
+	height:auto;
+	overflow:hidden;
+}
+
+#fenshi{
+	display:inline;
+	text-align:center;
+	width:auto;
+}
+
+#up{
+	position: absolute;
+	top:-0.8em;
+	width:3.75em;
+	left:2.5em;
+}
+
+#spliter{
+	position: absolute;
+	top:0.40em;
+	height:0.125em;
+	border-top:1px solid black;
+	width:3.75em;
+	margin-left:2.5em;
+	margin-right:3.75em;
+}
+
+#before{
+	position: absolute;
+	top:-0.4em;
+	left:0em;
+	width:2.5em;
+}
+#after{
+	position: absolute;
+	top:-0.4em;
+	left:6.5625em;
+	width:auto;
+	text-align:left;
+}
+
+#down{
+	position:absolute;
+	top:0.21em;
+	left:2.5em;
+	width:3.75em;
+}

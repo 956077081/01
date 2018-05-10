@@ -1,0 +1,110 @@
+del,ins
+{
+	cursor: pointer;
+	color: red;
+}
+.hidden_info {
+	display: none;
+}
+
+/*************************************2013-09-11 by Tian Ran***************************************************/
+
+/*公共*/
+.basic_info {
+	border: 1px dotted blue;
+	font-size: 18px;
+}
+
+.ajax_input_number {
+	width: 50px;
+}
+
+.nation_list li{
+	list-style: none;
+	cursor: pointer;
+}
+
+/*病案首页*/
+.binganshouye_head {
+	/*height: 32px;*/
+}
+
+.binganshouye_body {
+	/*height: 20px;*/
+	font-size: 14px;
+}
+
+#replaceable_tips_confirm {
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	/*background: url("/tiantan_emr/Public/css/images/btn_ok.png") no-repeat;*/
+}
+
+#replaceable_tips_delete {
+	width: 15px;
+	height:15px;
+	margin:2px auto;
+}
+
+#replaceable_tips_confirm:hover,#replaceable_tips_delete:hover {
+	cursor: pointer;
+}
+
+li[type="normal"] div{
+	border: 1px solid blue;
+	border-radius: 10px;
+	/*padding-left: 9px;*/
+	text-align: center;
+}
+
+li[type="normal"] div:hover{
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+table.symbol_table {
+	border:1px solid;
+	/*z-index:100;*/
+	background-color: white;
+}
+td.symbol_td {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+td.symbol_td:hover {
+	cursor: pointer;
+	/*background-color: #CCC;*/
+	background-color: blue;
+	border-radius:5px;
+	
+}
+
+td.other_symbol_td {
+	border-top: 1px solid;
+	text-align: center;
+}
+
+td.other_symbol_td:hover {
+	cursor: pointer;
+	background-color: blue;
+}
+
+#auto_slelect_options_area{
+	display:none;
+	position:fixed;
+	border:1px solid blue;
+	padding:5px;
+	background-color:white;
+}
+.one_option{
+	cursor:pointer;
+	border-bottom:1px dashed blue;
+	padding:2px;
+}
+.one_option:hover{
+	color:blue;
+}

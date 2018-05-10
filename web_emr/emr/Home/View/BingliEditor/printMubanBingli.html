@@ -1,0 +1,64 @@
+﻿<html >
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/css/TiantanMathml.css'/>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/css/teditor.css'/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/printer_control.css"/>
+		
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+	<title>编辑模板病历</title>
+</head>
+
+<body>
+<div class="top_manager_menu">
+		当前模板名称:{$bingli_info.mingcheng} 
+		<empty name="show_back">
+			<input type="button" id="view_muban_detail" class="quick_menu_button" value=" 返 回 " />
+		<else />
+			<input type="button"  class="submit_button" id="close" value=" 返 回 " />
+		</empty>
+</div>
+<div class="page">
+	<if condition="$bingli_info['bingli_type']=='住院病案首页'">
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/binganshouye.css" />
+	<else />
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/binglijilu.css" />
+	</if>
+	<div id="bingli_content" name="content" contenteditable="true" style="min-height:500px;">
+		{$bingli_info.content}
+	</div>
+<script type="text/javascript">
+	server_url = "{$Think.config.WEB_HOST}";
+	action_url = "http://{$Think.config.WEB_HOST}/web_emr/Home/BingliEditor/saveMubanBingli";
+	zhuyuan_id = "{$bingli_info.muban_id}";
+	bingli_type = "{$bingli_info.muban_bingli_type}";
+	muban_bingli_type = "{$bingli_info.muban_bingli_type}";
+	muban_leixing = "{$bingli_info.muban_leixing}";
+	muban_kebie = "{$bingli_info.muban_kebie}";
+	mingcheng = "{$bingli_info.mingcheng}";
+	yiyuan_id = "{$bingli_info.yiyuan_id}";
+	document_name = "{$bingli_info.muban_bingli_type}";
+	document_relate_table = "{$bingli_info.muban_bingli_type}";
+	patient_xingming = "{$bingli_info.mingcheng}";
+	mingcheng=encodeURI(mingcheng);
+	mingcheng=encodeURI(mingcheng);
+	muban_kebie=encodeURI(muban_kebie);
+	muban_kebie=encodeURI(muban_kebie);
+		muban_bingli_type=encodeURI(muban_bingli_type);
+	muban_bingli_type=encodeURI(muban_bingli_type);
+		muban_leixing=encodeURI(muban_leixing);
+	muban_leixing=encodeURI(muban_leixing);
+	
+	$(function(){
+		$("#view_muban_detail").click(function(){
+		
+			address="http://"+server_url+"/web_emr/MubanGuanli/showMubanDetail/muban_id/"+zhuyuan_id+"/mingcheng/"+mingcheng+"/muban_leixing/"+muban_leixing+"/muban_bingli_type/"+muban_bingli_type+"/muban_kebie/ "+muban_kebie;
+			window.location.href=address;
+		});
+	});
+</script>
+</div>
+</body>
+</html>

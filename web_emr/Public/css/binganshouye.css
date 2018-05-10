@@ -1,0 +1,284 @@
+body {
+	font-family:"ËÎÌו", Arial, Helvetica, sans-serif;
+	font-size:18px;
+	margin:0px;
+	padding:0px;
+	background-color:white;
+}
+
+p{
+	padding:0px;
+	margin:0px;
+}
+ol,ul{
+	padding:0;
+	margin-top:6px;
+	margin-bottom:6px;
+	}
+
+table{
+	border-collapse:separate;
+	*border-collapse:collapse;
+	empty-cells:show;
+	word-wrap:break-word;
+	overflow:hidden;
+}
+table tr td { line-height:26px;}
+.page {
+	margin:0px auto 0 auto;
+	padding-top:0px;
+	width:750px;
+	position:relative;
+}
+
+.page_break {
+	page-break-before:always;
+}
+
+.head_title {
+	text-align:center;
+	margin-bottom:20px;
+	font-weight:bold;
+}
+
+.daima_title {
+	text-align:left;
+	font-size:16px;
+	margin-bottom:10px;
+	font-weight:bold;
+}
+
+.head_title_bingcheng {
+	text-align:center;
+	margin-bottom:10px;
+	font-weight:bold;
+}
+.main_title_bingcheng {
+	letter-spacing:10px;
+	text-align:center;
+	font-size:25px;
+	height:30px;
+}
+.sub_title_bingcheng {
+	padding-left:30px;
+	letter-spacing:30px;
+	font-size:25px;
+	height:30px;
+}
+
+.main_title {
+	letter-spacing:17px;
+	text-align:center;
+	font-size:35px;
+	height:45px;
+}
+.main_title_long_name {
+	letter-spacing:2px;
+	text-align:center;
+	font-size:25px;
+	height:45px;
+}
+.sub_title {
+	letter-spacing:17px;
+	font-size:30px;
+	height:35px;
+  text-align:center;
+  margin-top:10px;
+}
+
+.head_table {
+	font-size:16px;
+	line-height:1.5;
+	width:750px;
+	margin-bottom:5px
+}
+.head_table .blank_td {
+	text-align:right;
+	padding-right:2px;
+}
+.head_table .info_area {
+	border-bottom:1px solid #000;
+	text-align:left;
+	padding-left:2px;
+}
+.head_table .info_area_middle {
+	border-bottom:1px solid #000;
+	text-align:center;
+	padding-left:2px;
+}
+.head_table .info_area_without_border {
+	text-align:left;
+	padding-left:2px;
+}
+.head_table .info_title_begin {
+	text-align:left;
+	padding-right:2px;
+}
+.head_table .info_title_end {
+	text-align:left;
+	padding-left:2px;
+}
+
+.content_table {
+	font-size:14px;
+	line-height:24px;
+	width:750px;
+	border-top:1px solid #000;
+	border-left:1px solid #000;
+	border-right:1px solid #000;
+	padding:0px;
+	margin:0px;
+}
+.content_table .zhenduan_content
+{
+	font-size:13px;
+	line-height:15px;
+}
+.content_table .blank_td {
+	border-right:1px solid #999;
+	text-align:right;
+	padding-right:2px;
+}
+.content_table .info_area {
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	text-align:left;
+	padding-left:2px;
+}
+.content_table .info_area_middle {
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	text-align:center;
+	padding-left:2px;
+}
+.content_table .info_area_without_border {
+	text-align:left;
+	padding-left:2px;
+}
+.content_table .info_area_small {
+	font-size:12px;
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	text-align:left;
+	padding-left:2px;
+}
+.content_table .info_title {
+	border-right:1px dashed #000;
+	border-bottom:1px solid #000;
+	text-align:center;
+	font-weight:bold;
+}
+.content_table .info_grid_title {
+	border-right:1px solid #000;
+	border-bottom:1px solid #000;
+	text-align:center;
+	font-weight:bold;
+}
+.content_table .info_grid {
+	border-right:1px solid #000;
+	border-bottom:1px solid #000;
+	text-align:center;
+	word-wrap:break-word ;
+	word-break: break-all;
+}
+.content_table_small {
+	font-size:12px;
+	line-height:24px;
+	width:750px;
+	border-left:1px solid #000;
+	border-right:1px solid #999;
+	border-top:1px solid #999;
+	padding:0px;
+	margin:0px;
+}
+.content_table_small .blank_td {
+	border-right:1px solid #999;
+	text-align:right;
+	padding-right:2px;
+}
+.content_table_small .info_area {
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	text-align:left;
+	padding-left:2px;
+}
+.content_table_small .info_title {
+	border-right:1px solid #CCC;
+	border-bottom:1px solid #000;
+	text-align:center;
+}
+
+.content_table_without_inner_border {
+	border-left:1px solid black;
+	border-right:1px solid black;
+	font-size:14px;
+	line-height:24px;
+	width:750px;
+	margin:0px;
+}
+.content_table_without_inner_border .blank_td {
+	text-align:right;
+	padding-right:2px;
+}
+.content_table_without_inner_border .info_title {
+	padding-left:4px;
+	text-align:left;
+	font-weight:bold;
+}
+.content_table_without_inner_border .info_grid {
+	border-bottom:1px solid black;
+	text-align:center;
+}
+.content_table_without_inner_border .info_area {
+	border-bottom:1px solid black;
+	text-align:left;
+	padding-left:2px;
+}
+.content_table_without_inner_border .info_area_middle {
+	border-bottom:1px solid black;
+	text-align:center;
+	padding-left:2px;
+}
+.content_table_without_inner_border .info_area_without_border {
+	text-align:left;
+	padding-left:2px;
+}
+.content_table_without_inner_border .info_area_small {
+	border-bottom:1px solid black;
+	font-size:12px;
+	text-align:left;
+	padding-left:2px;
+}
+
+.first_table td{
+	border-top:1px solid black;
+}
+.doctor_signature{
+	float:right;
+	padding-right:5px;
+}
+
+.under_line_info{
+	padding-left:5px;
+	padding-right:5px;
+	border-bottom:1px solid black;
+}
+
+.full_border_info{
+	margin-left:5px;
+	margin-right:5px;
+	line-height:10px;
+	padding-left:3px;
+	padding-right:3px;
+	border:1px solid #2F3C3C;
+	text-align:center;
+}
+
+.bottom_info{
+	margin-top:10px;
+	letter-spacing:1px;
+	font-size:14px;
+}
+.radio_checkbox,.radio_checkbox_label{
+	cursor:pointer;
+}

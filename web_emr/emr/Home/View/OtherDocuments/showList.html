@@ -1,0 +1,171 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<title>其它文书列表</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/list_view.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/tiantan_ui.css" media="all" />
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+</head>
+
+<body>
+<form method="get" action="__URL__/showZhiqingshuList/" id="format">
+<div class="list_title">
+	<div class="list_title_span">其它文书列表</div>
+</div>
+<table border="0" cellpadding="0" cellspacing="0" class="title_table">
+		<tr>
+			<td width="20%">添加时间</td>
+			<td width="10%">所属科室</td>
+			<td width="30%">文书名称</td>
+			<td width="13%">添加医师</td>
+			<td width="13%">操作管理</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="text" name="generate_time" value="{$generate_time}" class="search_input_type" />
+			</td>
+			<td>
+				<input type="text" name="category" value="{$category}" class="search_input_type" />
+			</td>
+			<td>
+				<input type="text" name="zhongwen_mingcheng" value="{$zhongwen_mingcheng}" class="search_input_type" />
+			</td>
+			<td>
+				<input type="text" name="generate_user_name" value="{$generate_user_name}" class="search_input_type" />
+			</td>
+			<td style="text-align:center;">
+				<input type="hidden" name="zhuyuan_id" value="{$zhuyuan_id}"/>
+				<input type="submit" value="筛选" class="search_button"/>
+			</td>
+		</tr>
+</table>
+</form>
+<table border="0" cellpadding="0" cellspacing="0" class="content_table">
+	<volist name="data" id="data">
+		<tr class="list_content" href="__URL__/editDocument/zhuyuan_id/{$zhuyuan_id}/document_id/{$data.id}">
+		<td style="width:20%;">{$data.generate_time}</td>
+		<td style="width:10%;">{$data.category}</td>
+		<td style="text-align:left;padding-left:10px; width:30%;">{$data.zhongwen_mingcheng}</td>
+		<td style="width:13%;">{$data.generate_user_name}</td>
+		<td style="width:13%;">
+			<input name="document_id" type="hidden" value="{$data.id}">
+			<input type="button" class="submit_button" name="delete_one_document" value="删除">
+		</td>
+		</tr>
+	</volist>
+	<input name="user_department" type="hidden" value="{$_SESSION['user_department']}" />
+	<input name="user_name" type="hidden" value="{$_SESSION['user_name']}" />
+	<input type="submit" class="search_button" style=" display:none;" id="dayin_add"/>
+	<input name="zhuyuan_id" type="hidden" value="{$zhuyuan_id}" />
+</table>
+<table id="nav_table" class="title_table">
+    <tr class="without_event">
+        <td width="60%">
+            <input type="button" id="first_page" value="首页" class="search_button"/>&nbsp;&nbsp;
+            <if condition="$page gt 1">
+                <input type="button" id="previous_page" value="前页" class="search_button"/>&nbsp;&nbsp;
+            </if>
+            第
+            <select name="menu1" onchange="MM_jumpMenu('self',this,0)" target="_blank">
+            <if condition="$page != 1">
+                    <option value="__ACTION__{$lujin}/page/{$page}">{$page}</option>
+            </if>
+            <?php
+                    for ($i = 1; $i <= $yeshu; $i++)
+                    {
+                ?>
+                            <option value="__ACTION__{$lujin}/page/<?php echo $i; ?>"><?php echo $i; ?></option>;
+                <?php
+                    }
+                ?>
+            </select>
+            页&nbsp;&nbsp;
+            
+            <if condition="($page lt $yeshu)">
+                <input type="button" id="next_page" value="后页" class="search_button"/>&nbsp;&nbsp;
+            </if>
+            <input type="button" id="last_page" value="末页" class="search_button"/>&nbsp;&nbsp;
+        </td>
+        <td colspan="2">
+            每页显示{$page_tiaoshu}条/共{$zongshu}条
+        </td>
+    </tr>
+</table>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.qtip-1.0.0-rc3.js" ></script>
+<script type="text/javascript" src="__PUBLIC__/js/artDialog/artDialog.js?skin=green"></script>
+<script>
+	server_url = "{$Think.config.WEB_HOST}";
+	user_number = "{$_SESSION.user_number}";
+	object_user_department = "";
+	$(function(){
+		try
+		{
+			parent.loadingEnd();
+		}
+		catch(ex)
+		{
+			
+		}
+		
+		//鼠标经过样式变化处
+		$(".list_content").hover(
+			function () {
+				$(this).addClass("tr_hover");
+			},
+			function () {
+				$(this).removeClass("tr_hover");
+			}
+		)
+		//超链接无虚线框处
+		$("a").focus(
+			function () {
+				$(this).blur(); //得到焦点与失去焦点效果一致
+			}
+		)
+	})
+	
+	$(".list_content").click(function (a) {
+		if($(a.target).attr("name")=="delete_one_document")
+		{
+			var document_id = $(this).find("[name='document_id']").val();
+			if(confirm("确定要删除此文书吗?"))
+			{
+				var temp_this = $(this);
+				$.get("__URL__/deleteOneDocument", { document_id: document_id },function(data){
+					if(data == "yes")
+					{
+						temp_this.remove();
+					}
+				});
+			}
+		}
+		else if($(a.target).attr("type")!="checkbox")
+		{
+			window.location.href = $(this).attr("href");
+		}
+	})
+	
+	function MM_jumpMenu(targ,selObj,restore)
+	{ //v3.0
+		eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+		if (restore) selObj.selectedIndex=0;
+	}
+	$("#first_page").click(function(){
+		window.location.href="__ACTION__{$lujin}";
+	});
+	$("#previous_page").click(function(){
+		window.location.href="__ACTION__{$lujin}/page/{$page-1}";
+	});
+	$("#next_page").click(function(){
+		window.location.href="__ACTION__{$lujin}/page/{$page+1}";
+	});
+	$("#last_page").click(function(){
+		window.location.href="__ACTION__{$lujin}/page/{$yeshu}";
+	});
+</script>
+
+</body>
+</html>

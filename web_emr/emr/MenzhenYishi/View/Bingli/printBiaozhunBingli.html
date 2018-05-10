@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/css/TiantanMathml.css'/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jqueryui/themes/base/jquery.ui.all.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/binglijilu.css" />
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/printer_control.css"/>
+	<link type="text/css" href="__PUBLIC__/js/city_picker/css/jquery.citypicker.css" rel="stylesheet" />
+	<link type="text/css" href="__PUBLIC__/js/nation_picker/css/jquery.nationpicker.css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/css/teditor.css'/>
+
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/tiantan_ui.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.scrollto.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.qtip-1.0.0-rc3.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/artDialog/artDialog.js?skin=blue" ></script>
+	<!--<script type="text/javascript" src="__PUBLIC__/js/artDialog/plugins/iframeTools.js"></script>-->
+	<link rel="stylesheet" href="__PUBLIC__/js/artDialog/skins/blue.css">
+	<script type="text/javascript" src="__PUBLIC__/js/Lodop_jquery_plugin.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/printer_control.js" ></script>
+	<script type="text/javascript" src='__PUBLIC__/js/TiantanMathml.js' ></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/city_picker/jquery.citypicker.js" ></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/nation_picker/jquery.nationpicker.js" ></script>
+<script type="text/javascript">
+	server_url = "{$Think.config.WEB_HOST}";
+	action_url = "http://{$Think.config.WEB_HOST}/tiantan_emr/MenzhenYishi/Bingli/updateBiaozhunBingli";
+	zhuyuan_id = "{$menzhen_basic_info.menzhen_id}";
+	patient_xingming = "{$patient_basic_info.xingming}";
+	document_id = zhuyuan_id;
+	document_relate_table = "zhuyuan_ruyuanjilu";
+	document_name = "入院记录";
+
+	//是否开启各种处理引擎
+	revise = "{$Think.session.revise}";
+	multi_media_engine = "{$Think.config.multi_media_engine}";
+	user_department_position = "{$Think.session.user_department_position}";
+	user_name = "{$Think.session.user_name}";
+	user_number = "{$Think.session.user_number}";
+	zhuyuanyishi_id = "{$Think.session.zhuyuanyishi_id}";
+	show_page_number = true;
+	
+	$(function(){
+		controlPrinterByLodop();
+	});
+	
+</script>
+	<title>门诊病历</title>
+	<style type="text/css">
+		video{
+			transform: scaleX(-1);
+		}
+		#tongbu { display:none;}
+		#add_new_bingcheng { display:none;}
+		#add_new_hulijilu { display:none;}
+		.list {
+			border: 1px solid #ddd;
+			height: 350px;
+			width: 250px;
+		}
+		.list div {
+			border: 1px solid #ddd;
+			margin-bottom: 5px;
+			padding: 10px;
+			cursor: pointer;
+		}
+		.ui-datepicker{
+			font-size:14px;
+		}
+	</style>
+</head>
+
+<body>
+<div class="page">
+	<div class="head_title">
+		<div class="main_title">{$Think.config.hospital_name}</div>
+		<div class="sub_title">门诊病历</div>
+	</div>
+
+		<table id="1" border="0" cellpadding="0" cellspacing="0" class="head_table" database_table_name="patient_basic_info patient_contact_info zhuyuan_basic_info zhuyuan_bingshi">
+        <tr>
+            <td width="80"  class="info_title_begin">姓名:</td>
+            <td width="60" >{$menzhen_basic_info.xingming}</td>
+            <td width="10"  class="blank_td"></td>
+            <td width="80"  class="info_title_begin">性别:</td>
+            <td width="60" >{$menzhen_basic_info.xingbie}</td>
+            <td width="10"  class="blank_td"></td>
+            <td width="80"  class="info_title_begin">年龄:</td>
+            <td width="60" >{$menzhen_basic_info.nianling}</td>
+            <td width="10"  class="blank_td"></td>
+            <td class="blank_td"></td>
+        </tr>
+	</table>
+
+	<table id="2" border="0" cellpadding="0" cellspacing="0" class="content_table_without_border"  database_table_name="zhuyuan_bingshi">
+		<tr>
+			<td class="info_block"><div keyword="主诉" name="zhusu" contenteditable="true" media_type="all"><p><b>主诉及现病史</b>:{$menzhen_bingli_temp.zhusu}</div></td>
+		</tr>
+		<tr>
+			<td class="info_block"><div keyword="既往史" name="jiwangshi" contenteditable="true" media_type="all"><p><b>既往史</b>:{$menzhen_bingli_temp.jiwangshi}</div></td>
+		</tr>
+		<tr>
+			<td class="info_block"><div keyword="家族史" name="jiazushi" contenteditable="true" media_type="all"><p><b>家族史</b>:{$menzhen_bingli_temp.jiazushi}</div></td>
+		</tr>
+		<tr>
+			<td class="info_block"><div keyword="孕产史" name="yunchanshi" contenteditable="true" media_type="all"><p><b>孕产史</b>:{$menzhen_bingli_temp.yunchanshi}</div></td>
+		</tr>
+		<tr>
+			<td class="info_block"><div keyword="体格检查" name="tigejiancha" media_type="all"><p><b>体格检查</b>:{$menzhen_bingli_temp.tigejiancha}</div></td>
+		</tr>
+		<tr>
+			<td class="info_block"><div keyword="一般检查" name="yibanjiancha" contenteditable="true" media_type="all">{$menzhen_bingli_temp.yibanjiancha}</div></td>
+		</tr>
+	</table>
+</div>
+<div id="dialog-confirm" title="要接受这条修改吗?">
+</div>
+<div id="bottom"></div>
+<script type="text/javascript" src="__PUBLIC__/js/ajax_editor.js" ></script>
+<script type="text/javascript">
+	multi_media_engine = "{$Think.config.multi_media_engine}";
+</script>
+</body>
+</html>

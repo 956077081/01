@@ -1,0 +1,246 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/list_view.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/tiantan_ui.css" media="all" />
+	<title>濡剝婢橀崚妤勩€?/title>
+</head>
+<body>
+	<div class="list_title">
+		<div class="list_title_span" style="margin-right:10px;">???????? ???????(濡剝婢橀崚妤勩€?</div>
+		<div class="search_menu">
+			<form method="get" action="__URL__/showMubanList">
+				<input type="text" name="keyword" value="{$keyword}" style="width:200px"/>
+				<input type="submit" class="search_button" value="閺屻儲澹?/>
+				<input type="button" class="search_button" id="quanbu_muban" value="閸忋劑鍎村Ο鈩冩緲"/>
+				<input type="button" class="search_button" id="gonggong_muban" value="閸忣剙鍙″Ο鈩冩緲"/>
+				<input type="button" class="search_button" id="keshi_muban" value="缁夋垵顓诲Ο鈩冩緲"/>
+				<input type="button" class="search_button" id="geren_muban" value="閹存垹娈戝Ο鈩冩緲"/>
+				<input type="button" class="search_button" id="tianjia_muban" value="濞ｈ濮炲Ο鈩冩緲"/>
+			</form>
+		</div>
+	</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="title_table">
+	<tr>
+		<td width="20%">閸氬秶袨</td>
+		<td width="10%">濡剝婢樼猾璇茬�?/td>
+		<td width="10%">濡剝婢樼粔鎴濆�?/td>
+		<td width="10%">濡剝婢橀惀鍛坊缁�?/td>
+		<td width="10%">閹碘偓鐏炵偛灏伴�?/td>
+		<td width="10%">閹碘偓鐏炵偟顫栫�?/td>
+		<td width="15%">閹碘偓鐏炵偛灏伴�?/td>
+	</tr>
+	</table>
+
+	<table border="0" cellpadding="0" cellspacing="0" class="content_table">
+		<volist name="search_result" id="search_result">
+				<tr class="list_content"  zhuyuan_id="{$search_result.zhuyuan_id}" href="__URL__/showMubanDetail/muban_id/{$search_result.muban_id}/mingcheng/{$search_result.mingcheng}/muban_leixing/{$search_result.muban_leixing}/muban_kebie/{$search_result.muban_kebie}/muban_bingli_type/{$search_result.muban_bingli_type}">
+					<td width="20%">{$search_result.mingcheng}</td>
+					<td width="10%">{$search_result.muban_leixing}</td>
+					<td width="10%">{$search_result.muban_kebie}</td>
+					<td width="10%">{$search_result.muban_bingli_type}</td>
+					<td width="10%">{$search_result.suoshu_user_name}</td>
+					<td width="10%">{$search_result.suoshu_department_name}</td>
+					<td width="15%">{$search_result.suoshu_yiyuan_name}</td>
+				</tr>
+		</volist>
+	</table>
+		
+	<table id="nav_table" class="title_table">
+		<tr class="without_event">
+			<td style=" width:400px;">
+				<input type="button" id="first_page" value="??? ??? 妫ｆ牠銆? class="button_medium"/>&nbsp;&nbsp;
+				<if condition="$current_page_number gt 1">
+					<input type="button" id="previous_page" value="???????? ??? 閸撳秹銆? class="button_medium"/>&nbsp;&nbsp;
+				</if>
+				�?
+				<select name="menu1" onchange="MM_jumpMenu('self',this,0)" target="_blank">
+				<if condition="$page != 1">
+						<option value="__ACTION__/page/{$current_page_number}/keyword/{$keyword}/selection_condition/{$selection_condition}">{$current_page_number}</option>
+				</if>
+				<?php
+						for ($i = 1; $i <= $total_page_number; $i++)
+						{
+					?>
+							 	<option value="__ACTION__/page/<?php echo $i; ?>/keyword/{$keyword}/selection_condition/{$selection_condition}"><?php echo $i; ?></option>;
+					<?php
+						}
+					?>
+				</select>
+				�?nbsp;&nbsp;
+				
+				<if condition="($current_page_number lt $total_page_number)">
+					<input type="button" id="next_page" value="??????? ??? 閸氬酣銆? class="button_medium"/>&nbsp;&nbsp;
+				</if>
+				<input type="button" id="last_page" value="??????? ??? 閺堫偊銆? class="button_medium"/>&nbsp;&nbsp;
+			</td>
+			<td style=" width:200px;">
+				??? ????? {$one_page_amount} ????? ???????????? ?????? {$total_amount} ???
+				<br />
+				濮ｅ繘銆夐弰鍓с仛{$one_page_amount}�?閸忕�?total_amount}�?
+			</td>
+		</tr>
+	</table>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+<load href='__PUBLIC__/js/jquery.form.js' />
+<load href='__PUBLIC__/js/tiantan_ui.js' />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/artDialog/artDialog.js?skin=aero" ></script>
+<script type="text/javascript">
+	server_url = "{$Think.config.WEB_HOST}";
+	yiyuan_id = "{$Think.session.yiyuan_id}";
+
+	//閸忔娊妫撮崝鐘烘祰閺?
+	try{parent.loadingEnd();}catch(ex){}
+
+	// 妞ょ敻娼扮捄瀹犳�?
+	function MM_jumpMenu(targ,selObj,restore)
+	{ //v3.0
+	  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+	  if (restore) selObj.selectedIndex=0;
+	}
+	$("#first_page").click(function(){
+		window.location.href="__ACTION__/page/1/keyword/{$keyword}/selection_condition/{$selection_condition}";
+	});
+	$("#previous_page").click(function(){
+		window.location.href="__ACTION__/page/{$current_page_number-1}/keyword/{$keyword}/selection_condition/{$selection_condition}";
+	});
+	$("#next_page").click(function(){
+		window.location.href="__ACTION__/page/{$current_page_number+1}/keyword/{$keyword}/selection_condition/{$selection_condition}";
+	});
+	$("#last_page").click(function(){
+		window.location.href="__ACTION__/page/{$total_page_number}/keyword/{$keyword}/selection_condition/{$selection_condition}";
+	});
+	
+	$("#quanbu_muban").click(function(){
+		window.location.href="__ACTION__/selection_condition/quanbu_muban/page/1";
+	});
+	$("#gonggong_muban").click(function(){
+		keyowrd = $("[name='keyword']").val();
+		window.location.href="__ACTION__/selection_condition/gonggong_muban/page/1/keyword/"+keyowrd;
+	});	
+	$("#keshi_muban").click(function(){
+		keyowrd = $("[name='keyword']").val();
+		window.location.href="__ACTION__/selection_condition/keshi_muban/page/1/keyword/"+keyowrd;
+	});
+	
+	$("#geren_muban").click(function(){
+		keyowrd = $("[name='keyword']").val();
+		window.location.href="__ACTION__/selection_condition/geren_muban/page/1/keyword/"+keyowrd;
+	});
+	
+	$("#tianjia_muban").click(function(){
+		var gonggong_muban_option = "";
+		if("{$Think.session.user_type}" == "缁狅紕鎮婇崨?)
+		{
+			gonggong_muban_option += '<option value="閸忣剙鍙″Ο鈩冩緲">閸忣剙鍙″Ο鈩冩緲</option>';
+		}
+		art.dialog({
+			id:"zengjiamuban_dialog",
+			title:"婢х偛濮炲Ο鈩冩�?,
+			content:'<form class="add_form" method="post" action="__ROOT__/Common/MubanGuanli/addMubanBingli">'+
+								'<table>'+
+									'<tr>'+
+										'<td style="text-align:right">鐠囩柉绶崗銉δ侀弶鍨倳缁夊府�?/td>'+
+										'<td><input name="mingcheng" value=""/></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">鐠囩兘鈧瀚ㄩ幍鈧晶鐐插閻ㄥ嫭膩閺夎法娈戠猾璇茬€烽敍?/td>'+
+										'<td>'+
+											'<select name="muban_leixing"  class="select_name">'+
+												gonggong_muban_option+
+												'<option value="缁夋垵顓诲Ο鈩冩緲">缁夋垵顓诲Ο鈩冩緲</option>'+
+												'<option value="娑擃亙姹夊Ο鈩冩緲">娑擃亙姹夊Ο鈩冩緲</option>'+
+											'</select>'+
+										'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">鐠囩兘鈧瀚ㄥΟ鈩冩緲閻ㄥ嫮顫栭崚顐窗</td>'+
+										'<td>'+
+											'<select name="muban_kebie"  class="select_name">'+
+												'<option value="閸愬懐顫?>閸愬懐顫?/option>'+
+												'<option value="婢舵牜顫?>婢舵牜顫?/option>'+
+												'<option value="婵″洨�?>婵″洨�?/option>'+
+												'<option value="閸庤法顫?>閸庤法顫?/option>'+
+												'<option value="娑擃厼灏扮粔?>娑擃厼灏扮粔?/option>'+
+												'<option value="閸忚泛鐣?>閸忚泛鐣?/option>'+
+											'</select>'+
+										'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">鐠囩兘鈧瀚ㄥΟ鈩冩緲閻ㄥ嫭鏋冨锝囪閸ㄥ绱?/td>'+
+										'<td>'+
+											'<select name="muban_bingli_type"  class="select_name">'+
+												'<option value="閹靛綊鍣哄ǎ璇插">閹靛綊鍣哄ǎ璇插</option>'+
+												'<option value="閸忋儵娅岀拋鏉跨秿">閸忋儵娅岀拋鏉跨秿</option>'+
+												'<option value="妫ｆ牗顐奸崗銉╂珜鐠佹澘�?>妫ｆ牗顐奸崗銉╂珜鐠佹澘�?/option>'+
+												'<option value="閻ュ懐鈻肩拋鏉跨�?>閻ュ懐鈻肩拋鏉跨�?/option>'+
+												'<option value="閸戞椽娅岀拋鏉跨秿">閸戞椽娅岀拋鏉跨秿</option>'+
+												'<option value="閻儲鍎忛崥灞惧壈娑?>閻儲鍎忛崥灞惧壈娑?/option>'+
+												'<option value="濞岃崵鏋熸径鍕枂鐠佹澘�?>濞岃崵鏋熸径鍕枂鐠佹澘�?/option>'+
+												'<option value="閹躲倗鎮婄拋鏉跨�?>閹躲倗鎮婄拋鏉跨�?/option>'+
+											'</select>'+
+										'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">鐠囩柉绶崗銉δ侀弶鍨焼�?缂佺顕㈤崥宥呯摟缁?�?/td>'+
+										'<td><input name="second_mingcheng" value=""/></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right"><input type="checkbox" name="if_user_default_format" value="true" >閺勵垰鎯佹担璺ㄦ暏闁氨鏁ゅΟ鈩冩緲閺嶇厧绱￠�?/input></td>'+
+										'<td></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td colspan="2">'+
+											'<input type="hidden" name="yiyuan_id" value="'+yiyuan_id+'">'+
+											'<input type="submit" class="submit_button" value="�?�? />'+
+											'<input type="button" id="cancel_add" class="submit_button" value="�?�? />'+
+										'</td>'+
+									'</tr>'+
+								'</table>'+
+							'</form>',
+			lock: true,
+			padding:5,
+			drag: false,
+			resize: false,
+			fixed: true,
+			close:function(){
+				$("body").eq(0).css("overflow","scroll");
+			},
+			init: function () {
+				$("body").eq(0).css("overflow","hidden");
+				$("#cancel_add").click(function(){
+					art.dialog.list['zengjiamuban_dialog'].close();
+				});
+			}
+		});
+	});
+	
+	$(function(){
+		//姒х姵鐖ｇ紒蹇氱箖閺嶅嘲绱￠崣妯哄婢?
+		$(".list_content").hover(
+			function () {
+				$(this).addClass("tr_hover");
+			},
+			function () {
+				$(this).removeClass("tr_hover");
+			}
+		);
+		//鐡掑懘鎽奸幒銉︽￥閾忔氨鍤庡鍡楊槱
+		$("a").focus(
+			function () {
+				$(this).blur(); //瀵版鍩岄悞锔惧仯娑撳骸銇戦崢鑽ゅ妽閻愯鏅ラ弸婊€绔撮�?
+			}
+		);
+	})
+
+	$(".list_content").click(function () {
+			parent.last_conframe_content = window.location.href;
+			window.location.href = $(this).attr("href");
+			parent.current_conframe_content = $(this).attr("href");
+			parent.current_zhuyuan_id = $(this).attr("zhuyuan_id");
+	});
+</script>
+</body>
+</html>

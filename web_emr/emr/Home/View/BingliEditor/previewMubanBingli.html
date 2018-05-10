@@ -1,0 +1,12 @@
+﻿<div class="priview_page" style="height:300px;width:700px;overflow:auto">
+	<br />
+	<if condition="$bingli_info['bingli_type']=='住院病案首页'">
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/binganshouye.css" />
+	<else />
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/binglijilu.css" />
+	</if>
+	<div id="bingli_content" name="content">
+		{$bingli_info.content}
+	</div>
+</div>
+

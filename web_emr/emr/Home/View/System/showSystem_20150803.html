@@ -1,0 +1,307 @@
+<html >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/themes/base/jquery.ui.all.css"/>
+	<load href='__PUBLIC__/css/web_system.css' />
+	<load href='__PUBLIC__/js/jquery-1.7.2.js' />
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.16.custom.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.ui.position.js"></script>
+	<load href='__PUBLIC__/js/tiantan_ui.js' />
+	<load href='__PUBLIC__/js/web_form_fully.js' />
+	<load href='__PUBLIC__/js/Lodop_jquery_plugin.js' />
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/artDialog/artDialog.js?skin=aero" ></script>
+	<title>{$Think.config.software_title}</title>
+</head>
+<body>
+<div class="head" >
+	<span id="logo"></span>
+	<span class="function_button" id="show_patient"><div>بىمارلار جەدۋىلى</div><div>患者列表</div></span>
+	<span class="function_button" id="muban_manage"><div>ئۈلگىلىك كېسەللىك تارىخى</div><div>管理模板</div></span>
+	<span class="function_button" id="logout"><div>چېكىنىپ چىقىش</div><div>退出</div></span>
+	<span class="function_button" id="print"><div>بېسىش</div><div>打印</div></span>
+	<span class="function_button" id="preview"><div>كۆرۈش</div><div>预览</div></span>
+	<span class="function_button" id="user_info">当前用户：{$_SESSION.user_name}<br />当前医院：{$_SESSION.yiyuan_name}</span>
+</div>
+<!-- container -->
+<div class="container">
+	<!-- leftMenu -->
+	<div class="left_menu">
+		<div class="nav_info" id="nav_info">请选择患者来书写病历</div>
+		<li id="bingli_tree">
+		</li>
+	</div>	
+
+	<!-- rightCon -->
+	<div class="right_content" id="right_content">
+			<iframe frameborder="0" id="conframe" scrolling="yes" class="conframe" name="conframe" hspace="0" height="100%" width="100%"  src="/web_emr/ZhuyuanYishi/Patient/showPatientList/suoyoubingren/suoyou"></iframe>
+	</div>
+</div>
+<!-- container over-->
+<!-- footer -->
+	<div class="footer" id="footer">
+			<iframe frameborder="0" class="printer_conframe" id="printer_conframe" scrolling="yes" name="printer_conframe" hspace="0" height="100%" width="100%"  src=""></iframe>
+	</div>
+	<div class="loading"></div>
+	<div class="system_tips"></div>
+<!-- footer over -->
+<script>
+	$(function(){
+		server_url = "{$Think.config.WEB_HOST}";
+		yiyuan_id = "{$_SESSION.yiyuan_id}";
+		user_id = "{$_SESSION.user_id}";
+		user_name = "{$_SESSION.user_name}";
+		user_type = "{$_SESSION.user_type}";
+		user_department = "{$_SESSION.user_department}";
+		user_department_position = "{$_SESSION.user_department_position}";
+		current_yiyuan_id = "{$_SESSION.yiyuan_id}";
+		
+		//判断浏览器类型以及插件安装情况：
+		var Sys = {};
+		var ua = navigator.userAgent.toLowerCase();
+		var s;
+		(s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+		(s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+		(s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+		(s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+		(s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+		if(Sys.firefox)
+		{
+		}
+		else
+		{
+			//$(".system_tips").append("<h3>●您正在使用的浏览器可能不能完整支持在线电子病历程序运行，请更换火狐(Firefox)浏览器，<a href='http://"+server_url+"/download/Firefox.exe'>点此下载</a>。</h3>");
+			//$(".system_tips").show();
+		}
+		//检测lodop插件
+		try
+		{
+			var LODOP=getLodop(document.getElementById('LODOP_OB'),document.getElementById('LODOP_EM'));
+			if ((LODOP!=null)&&(typeof(LODOP.VERSION)!="undefined"))
+			{d
+				$(".system_tips").append("<h3>●你的计算机尚未安装打印控件，将会影响您使用打印功能，请安装打印控件，<a href='http://"+server_url+"/download/install_lodop32.exe'>点此下载</a>。</h3>");
+				$(".system_tips").show();
+			}
+		}
+		catch(err)
+		{
+				$(".system_tips").append("<h3>●你的计算机尚未安装打印控件，将会影响您使用打印功能，请安装打印控件，<a href='http://"+server_url+"/download/install_lodop32.exe'>点此下载</a>。</h3>");
+				$(".system_tips").show();
+		}
+
+		
+		$("#show_patient").click(function(){
+			$("#nav_info").html("请选择患者");
+			$("#bingli_tree").html("");
+			$("#conframe").attr("src","/web_emr/ZhuyuanYishi/Patient/showPatientList");
+		});
+		
+		$("#muban_manage").click(function(){
+			$("#nav_info").html("请选择模板");
+			$("#bingli_tree").html("");
+			$("#conframe").attr("src","/web_emr/Common/MubanGuanli/showMubanList");
+		});
+		
+		$("#logout").click(function(){
+			window.location.href = "http://"+server_url+"/web_emr/Common/System/logout";
+		});
+		
+		$("#add_bingli").live("click",function(){
+			//病历树
+			if(current_content_url.indexOf("showPatientZhuyuanDetail") != -1)
+			{
+				art.dialog({
+					id:"zengjiamuban_dialog",
+					title:"增加病历",
+					content:'<table>'+
+											'<tr>'+
+												'<td style="text-align:right">请选择模板的文档类型：</td>'+
+												'<td>'+
+													'<select name="muban_bingli_type"  class="select_name">'+
+														'<option value="病案首页">病案首页</option>'+
+														'<option value="入院记录">入院记录</option>'+
+														'<option value="病程记录">病程记录</option>'+
+														'<option value="出院记录">出院记录</option>'+
+														'<option value="知情同意书">知情同意书</option>'+
+														'<option value="治疗处置记录">治疗处置记录</option>'+
+														'<option value="护理记录">护理记录</option>'+
+													'</select>'+
+												'</td>'+
+											'</tr>'+
+											'<tr>'+
+												'<td style="text-align:right">请选择或输入模板名称</td>'+
+												'<td><input name="mingcheng" value=""/></td>'+
+											'</tr>'+
+											'<tr>'+
+												'<td colspan="2">'+
+													'<input type="hidden" name="muban_id" value="">'+
+													'<input type="hidden" name="zhuyuan_id" value="'+current_zhuyuan_id+'">'+
+													'<input type="button" id="add_bingli" class="submit_button" value="增 加" />'+
+													'<input type="button" id="cancel_add" class="submit_button" value="取 消" />'+
+												'</td>'+
+											'</tr>'+
+										'</table>',
+					lock: true,
+					padding:5,
+					drag: false,
+					resize: false,
+					fixed: true,
+					close:function(){
+						$("body").eq(0).css("overflow","scroll");
+					},
+					init: function () {
+						$("body").eq(0).css("overflow","hidden");
+						$("#cancel_add").click(function(){
+							art.dialog.list['zengjiamuban_dialog'].close();
+						});
+						muban_bingli_type = $("[name='muban_bingli_type']").val();
+						$("#add_bingli").click(function(){
+							alert("http://"+server_url+"/web_emr/Common/MubanGuanli/addOneBingli/muban_id/"+current_muban_id+"/muban_bingli_type/"+muban_bingli_type+"/zhuyuan_id/"+current_zhuyuan_id);
+							$.getJSON( "http://"+server_url+"/web_emr/Common/MubanGuanli/addOneBingli/muban_id/"+current_muban_id+"/muban_bingli_type/"+muban_bingli_type+"/zhuyuan_id/"+current_zhuyuan_id, request, function( data, status, xhr ) {
+								
+							});
+						});
+					}
+				});
+			}
+			//模板树
+			else
+			{
+				art.dialog({
+					id:"zengjiamuban_dialog",
+					title:"增加模板",
+					content:'<form class="add_form" method="post" action="__ROOT__/Common/MubanGuanli/addMubanBingli">'+
+										'<table>'+
+											'<tr>'+
+												'<td style="text-align:right">请输入模板名称：</td>'+
+												'<td><input name="mingcheng" value="'+current_muban_mingcheng+'"/></td>'+
+											'</tr>'+
+											'<tr>'+
+												'<td style="text-align:right">请选择所增加的模板的类型：</td>'+
+												'<td>'+
+													'<select name="muban_leixing"  class="select_name">'+
+														'<option value="'+current_muban_leixing+'">'+current_muban_leixing+'</option>'+
+														'<option value="公共模板">公共模板</option>'+
+														'<option value="科室模板">科室模板</option>'+
+														'<option value="个人模板">个人模板</option>'+
+													'</select>'+
+												'</td>'+
+											'</tr>'+
+											'<tr>'+
+												'<td style="text-align:right">请选择模板的科别：</td>'+
+												'<td>'+
+													'<select name="muban_kebie"  class="select_name">'+
+														'<option value="'+current_muban_kebie+'">'+current_muban_kebie+'</option>'+
+														'<option value="内科">内科</option>'+
+														'<option value="外科">外科</option>'+
+														'<option value="妇科">妇科</option>'+
+														'<option value="儿科">儿科</option>'+
+														'<option value="中医科">中医科</option>'+
+														'<option value="其它">其它</option>'+
+													'</select>'+
+												'</td>'+
+											'</tr>'+
+											'<tr>'+
+												'<td style="text-align:right">请选择模板的文档类型：</td>'+
+												'<td>'+
+													'<select name="muban_bingli_type"  class="select_name">'+
+														'<option value="'+current_muban_bingli_type+'">'+current_muban_bingli_type+'</option>'+
+														'<option value="病案首页">病案首页</option>'+
+														'<option value="入院记录">入院记录</option>'+
+														'<option value="病程记录">病程记录</option>'+
+														'<option value="出院记录">出院记录</option>'+
+														'<option value="知情同意书">知情同意书</option>'+
+														'<option value="治疗处置记录">治疗处置记录</option>'+
+														'<option value="护理记录">护理记录</option>'+
+													'</select>'+
+												'</td>'+
+											'</tr>'+
+											'<tr>'+
+												'<td style="text-align:right">请输入模板别称(维语名字等)：</td>'+
+												'<td><input name="second_mingcheng" value=""/></td>'+
+											'</tr>'+
+											'<tr>'+
+												'<td style="text-align:right"><input type="checkbox" name="if_user_default_format" value="true" >是否使用通用模板格式：</input></td>'+
+												'<td></td>'+
+											'</tr>'+
+											'<tr>'+
+												'<td colspan="2">'+
+													'<input type="hidden" name="yiyuan_id" value="'+yiyuan_id+'">'+
+													'<input type="submit" class="submit_button" value="增 加" />'+
+													'<input type="button" id="cancel_add" class="submit_button" value="取 消" />'+
+												'</td>'+
+											'</tr>'+
+										'</table>'+
+									'</form>',
+					lock: true,
+					padding:5,
+					drag: false,
+					resize: false,
+					fixed: true,
+					close:function(){
+						$("body").eq(0).css("overflow","scroll");
+					},
+					init: function () {
+						$("body").eq(0).css("overflow","hidden");
+						$("#cancel_add").click(function(){
+							art.dialog.list['zengjiamuban_dialog'].close();
+						});
+					}
+				});
+			}
+		});
+		
+		$("[name='mingcheng']").live("focus",function(){
+			var cache_mingcheng = {},lastXhr_mingcheng;
+			$( "[name='mingcheng']" ).autocomplete({
+				minLength: 0,
+				autoFocus: false,
+				source: function( request, response ) {
+					term = request.term;
+					if ( term in cache_mingcheng ) {
+						response( cache_mingcheng[ term ] );
+						return;
+					}
+					lastXhr_mingcheng = $.getJSON( "http://"+server_url+"/web_emr/Common/MubanGuanli/getAutocomplateMubanInfo/", request, function( data, status, xhr ) {
+						cache_mingcheng[ term ] = data;
+						if ( xhr === lastXhr_mingcheng ) {
+							response( data );
+						}
+					});
+				},
+				focus: function( event, ui ) {
+					$( "[name='mingcheng']" ).val( ui.item.mingcheng );
+					current_muban_id = ui.item.muban_id;
+					
+					return false;
+				},
+				select: function( event, ui ) {
+					$( "[name='mingcheng']" ).val( ui.item.mingcheng );
+					current_muban_id = ui.item.muban_id;
+					return false;
+				}
+			})
+			.data( "autocomplete" )._renderItem = function( ul, item ) {
+				var label = item.mingcheng.replace(
+								new RegExp(
+									"(?![^&;]+;)(?!<[^<>]*)(" +
+									term +
+									")(?![^<>]*>)(?![^&;]+;)", "gi"
+								), "<span class=\"keyword\">$1</span>" );
+				return $( "<li></li>" )
+					.data( "item.autocomplete", item )
+					.append( "<a>" + item.mingcheng + "</a>" )
+					.appendTo( ul );
+			};
+			var e = jQuery.Event("keydown");
+			e.keyCode = 40; 
+			$(this).trigger(e);
+		});
+		
+	})
+</script>
+</body>
+</html>

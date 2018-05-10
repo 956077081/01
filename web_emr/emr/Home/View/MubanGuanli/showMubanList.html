@@ -1,0 +1,331 @@
+
+<html >
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/list_view.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/tiantan_ui.css" media="all" />
+	<title>模板列表</title>
+</head>
+<body>
+	<div class="list_title">
+		<div class="list_title_span" style="margin-right:10px;">模板列表</div>
+		<div class="search_menu">
+			<input type="button" class="search_button" id="tianjia_muban" value="添加模板"/>
+		</div>
+	</div>
+	
+	<form method="get" action="__URL__/showMubanList">
+		<table border="0" cellpadding="0" cellspacing="0" class="title_table">
+			<tr>
+				<td width="20%">名称</td>
+				<td width="10%">模板类型</td>
+				<td width="10%">模板科别</td>
+				<td width="10%">所属医生</td>
+				<td width="10%">所属科室</td>
+				<td width="15%">所属医院</td>
+				<td width="10%">操作</td>
+			</tr>
+			<tr>
+				<td width="20%">
+					<input type="text" name="mingcheng" value="{$mingcheng}"/>
+				</td>
+				<td width="10%">
+					<select name="muban_leixing" id="">
+						<if condition="$muban_leixing != ''">
+							<option value="{$muban_leixing}">{$muban_leixing}</option>
+						</if>
+						<option value="">全部</option>
+						<option value="公共模板">公共模板</option>
+						<option value="科室模板">科室模板</option>
+						<option value="个人模板">个人模板</option>
+					</select>
+				</td>
+				<td width="10%">
+					<select name="muban_kebie" id="">
+						<if condition="$muban_kebie != ''">
+							<option value="{$muban_kebie}">{$muban_kebie}</option>
+						</if>
+						<option value="">全部</option>
+						<option value="内科">内科</option>
+						<option value="外科">外科</option>
+						<option value="妇科">妇科</option>
+						<option value="儿科">儿科</option>
+						<option value="中医科">中医科</option>
+					</select>
+				</td>
+				<td width="10%">
+					<input type="text" name="suoshu_yisheng" value="{$suoshu_yisheng}" />
+				</td>
+				<td width="10%">
+					<input type="text" name="suoshu_keshi" value="{$suoshu_keshi}" />
+				</td>
+				<td width="15%">
+					<input type="text" name="suoshu_yiyuan" value="{$suoshu_yiyuan}" />
+				</td>
+				<td width="10%">
+					<input type="submit" class="search_button" value="筛选">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<table border="0" cellpadding="0" cellspacing="0" class="content_table">
+		<volist name="search_result" id="search_result">
+			
+					<tr class="list_content"   zhuyuan_id="{$search_result.zhuyuan_id}" href="__URL__/showMubanDetailGroup/muban_id/{$search_result.muban_id}/mingcheng/{$search_result.mingcheng}/muban_leixing/{$search_result.muban_leixing}/muban_kebie/{$search_result.muban_kebie}/muban_bingli_type/{$search_result.muban_bingli_type}"> 
+					
+					<td width="20%">{$search_result.mingcheng}</td>
+					<td width="10%">{$search_result.muban_leixing}</td>
+					<td width="10%">{$search_result.muban_kebie}</td>
+					<td width="10%">{$search_result.suoshu_user_name}</td>
+					<td width="10%">{$search_result.suoshu_department_name}</td>
+					<td width="15%">{$search_result.suoshu_yiyuan_name}</td>
+					<td width="10%">
+						<if condition="$search_result.suoshu_user_id eq $_SESSION['user_id'] or $_SESSION['user_type'] eq '管理员' ">
+							<input muban_id="{$search_result.muban_id}" type="button" class="search_button delete_group" value="删除">
+						</if>
+					</td>
+				</tr>
+		</volist>
+	</table>
+		
+	<table id="nav_table" class="title_table">
+		<tr class="without_event">
+			<td style=" width:400px;">
+				<input type="button" id="first_page" value="首页" class="button_medium"/>&nbsp;&nbsp;
+				<if condition="$current_page_number gt 1">
+					<input type="button" id="previous_page" value="前页" class="button_medium"/>&nbsp;&nbsp;
+				</if>
+				第
+				<select name="menu1" onChange="MM_jumpMenu('self',this,0)" target="_blank">
+				<if condition="$page != 1">
+						<option value="__ACTION__/page/{$current_page_number}{$url_params}">
+							{$current_page_number}
+						</option>
+				</if>
+				<?php
+						for ($i = 1; $i <= $total_page_number; $i++)
+						{
+					?>
+						 	<option value="__ACTION__/page/<?php echo $i; ?>{$url_params}">
+						 		<?php echo $i; ?>
+						 	</option>;
+					<?php
+						}
+					?>
+				</select>
+				页&nbsp;&nbsp;
+				
+				<if condition="($current_page_number lt $total_page_number)">
+					<input type="button" id="next_page" value="后页" class="button_medium"/>&nbsp;&nbsp;
+				</if>
+				<input type="button" id="last_page" value="末页" class="button_medium"/>&nbsp;&nbsp;
+			</td>
+			<td style=" width:200px;">
+				每页显示{$one_page_amount}条/共{$total_amount}条
+			</td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+<load href='__PUBLIC__/js/jquery.form.js' />
+<load href='__PUBLIC__/js/tiantan_ui.js' />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/artDialog/artDialog.js?skin=aero" ></script>
+<script type="text/javascript">
+   
+ 
+	server_url = "{$Think.config.WEB_HOST}";
+	yiyuan_id = "{$Think.session.yiyuan_id}";
+	var muban_bingli_type = "{$Think.config.muban_bingli_type}";
+	function getSelects(types) {
+		var st ='<option value="批量添加">批量添加</option>';
+		if(types==null || types=="") {
+		}else {
+			var fs = types.split(",");
+			for(var i=0; i<fs.length; i++) {
+				st += '<option value="'+fs[i]+'">'+fs[i]+'</option>';
+			}
+		}
+		return st;
+	}
+		
+	var bingli_types = getSelects(muban_bingli_type);
+	//关闭加载条
+	try{parent.loadingEnd();}catch(ex){}
+
+	// 页面跳转
+	function MM_jumpMenu(targ,selObj,restore)
+	{ //v3.0
+	  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+	  if (restore) selObj.selectedIndex=0;
+	}
+	url_params=encodeURI("{$url_params}");
+	url_params=encodeURI(url_params);
+	if(url_params=="undefined"){
+		url_params="";
+	}
+	$("#first_page").click(function(){
+		window.location.href="__ACTION__/page/1"+url_params;
+
+	});
+	$("#previous_page").click(function(){
+		window.location.href="__ACTION__/page/{$current_page_number-1}"+url_params;
+	});
+	$("#next_page").click(function(){
+		window.location.href="__ACTION__/page/{$current_page_number+1}"+url_params;
+	});
+	$("#last_page").click(function(){
+		window.location.href="__ACTION__/page/{$total_page_number}"+url_params;
+	});
+	
+	$("#tianjia_muban").click(function(){
+		var gonggong_muban_option = "";
+		if("{$Think.session.user_type}" == "管理员")
+		{
+			gonggong_muban_option += '<option value="公共模板">公共模板</option>';
+		}
+		art.dialog({
+			id:"zengjiamuban_dialog",
+			title:"增加模板",
+			content:'<form class="add_form_muban" method="post" action="__ROOT__/Home/MubanGuanli/addMubanBingli">'+
+								'<table>'+
+									'<tr>'+
+										'<td style="text-align:right">请输入模板名称：</td>'+
+										'<td><input name="mingcheng" value=""/></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">请选择所增加的模板的类型：</td>'+
+										'<td>'+
+											'<select name="muban_leixing"  class="select_name">'+
+												gonggong_muban_option+
+												'<option value="科室模板">科室模板</option>'+
+												'<option value="个人模板">个人模板</option>'+
+											'</select>'+
+										'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">请选择模板的科别：</td>'+
+										'<td>'+
+											'<select name="muban_kebie"  class="select_name">'+
+												'<option value="内科">内科</option>'+
+												'<option value="外科">外科</option>'+
+												'<option value="妇科">妇科</option>'+
+												'<option value="儿科">儿科</option>'+
+												'<option value="中医科">中医科</option>'+
+												'<option value="其它">其它</option>'+
+											'</select>'+
+										'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">请选择模板的文档类型：</td>'+
+										'<td>'+
+											'<select id="muban_bingli_type" name="muban_bingli_type"  class="select_name">'+
+												bingli_types+ '<option value="手动输入">手动输入</option>' +
+											'</select>'+
+											'<input type="text" id="moban_type" style="display:none" />'+
+										'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right">请输入模板别称(维语名字等)：</td>'+
+										'<td><input name="second_mingcheng" value=""/></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td style="text-align:right"><input type="checkbox" name="if_user_default_format" value="true" >是否使用通用模板格式：</input></td>'+
+										'<td></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td colspan="2">'+
+											'<input type="hidden" name="yiyuan_id" value="'+yiyuan_id+'">'+
+											'<input type="submit_button" id="cancel_add_muban" class="submit_button" value="增 加" />'+
+											'<input type="button" id="cancel_add" class="submit_button" value="取 消" />'+
+										'</td>'+
+									'</tr>'+
+								'</table>'+
+							'</form>',
+			lock: true,
+			padding:5,
+			drag: false,
+			resize: false,
+			fixed: true,
+			close:function(){
+				$("body").eq(0).css("overflow","scroll");
+			},
+			init: function () {
+				$("#muban_bingli_type").change(function(){
+					var muban_bingli_type = $("#muban_bingli_type").val();
+					if(muban_bingli_type=="手动输入") {
+						$("#moban_type").show();
+					}else {
+						$("#moban_type").hide();
+					}
+				});
+				$("body").eq(0).css("overflow","hidden");
+				$("#cancel_add").click(function(){
+					art.dialog.list['zengjiamuban_dialog'].close();
+				});
+				$("#cancel_add_muban").click(function(){
+					var muban_bingli_type = $("#muban_bingli_type").val();
+					var moban_type = $("#moban_type").val();
+					if(muban_bingli_type=="手动输入") {
+						if(moban_type==null || moban_type=="") {
+							alert("请输入模板的文档类型！");
+							return;
+						}else {
+							$("#muban_bingli_type").prepend("<option value='"+moban_type+"'>"+moban_type+"</option>"); 
+							$("#muban_bingli_type").val(moban_type);
+						}
+					}
+					$(".add_form_muban").submit();
+				});
+			}
+		});
+	});
+	
+	
+	$(function(){
+		//鼠标经过样式变化处
+		$(".list_content").hover(
+			function () {
+			
+				$(this).addClass("tr_hover");
+			},
+			function () {
+				$(this).removeClass("tr_hover");
+			}
+		);
+		//超链接无虚线框处
+		$("a").focus(
+			function () {
+				$(this).blur(); //得到焦点与失去焦点效果一致
+			}
+		);
+	})
+
+	$(".list_content").click(function (e) {
+	
+			if(e.target.nodeName != "INPUT")
+			{
+				parent.last_conframe_content = window.location.href;
+				s=$(this).attr("href");
+				s=encodeURI(s);
+				s=encodeURI(s);
+				window.location.href=s;
+				parent.current_conframe_content = $(this).attr("href");
+				parent.current_zhuyuan_id = $(this).attr("zhuyuan_id");
+			}
+			else
+			{
+				if(confirm("确定要删除吗？"))
+				{
+					//删除该组模板
+					var muban_id = $(this).find("input").attr("muban_id");
+					window.location.href =  "http://"+server_url+"/web_emr/Home/MubanGuanli/deleteGroup/muban_id/"+muban_id;
+				}
+			}
+			
+	});
+</script>
+
+</html>

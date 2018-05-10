@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/list_view.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/tiantan_ui.css" media="all" />
+	<title>患者列表</title>
+	<style type="text/css">
+		.yiguidang {
+			background:#E1E1E1;
+		}
+	</style>
+</head>
+<body>
+	<div class="list_title">
+		<div class="list_title_span" style="margin-right:20px;">&nbsp;&nbsp;患&nbsp;&nbsp;者&nbsp;&nbsp;列&nbsp;&nbsp;表&nbsp;&nbsp;</div>
+		<div class="search_menu">
+			<form method="get" action="__URL__/showPatientList">
+				<input type="text" name="keyword" value="{$keyword}" style="width:200px"/>
+				<input type="submit" class="search_button" value="查找"/>
+				<input type="button" class="search_button" id="suoyou_patient" value="全部"/>
+				<input type="button" class="search_button guidang_search" id="go_weiguidang" value="未归档" guidang_zhuangtai="未归档"/>
+				<input type="button" class="search_button guidang_search" id="go_guidangzhong" value="归档中" guidang_zhuangtai="归档中"/>
+				<input type="button" class="search_button guidang_search" id="go_yiguidang" value="已归档" guidang_zhuangtai="已归档"/>
+			</form>
+		</div>
+	</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="title_table">
+	<tr>
+		<td width="20%"><br />住院号</td>
+		<td width="15%"><br />病床号</td>
+		<td width="20%"><br />患者姓名</td>
+		<td width="10%"><br />年龄</td>
+		<td width="10%"><br />性别</td>
+		<td width="10%"><br />诊断</td>
+		<td width="5%"><br />住院状态</td>
+		<td width="5%"><br />归档状态</td>
+	</tr>
+	</table>
+
+	<table border="0" cellpadding="0" cellspacing="0" class="content_table">
+		<volist name="search_result" id="search_result">
+			<if condition="$search_result['guidang_zhuangtai']!='未归档' and $search_result['zhuangtai']!='未归档   ' ">
+				<tr class="list_content yiguidang"  zhuyuan_id="{$search_result.zhuyuan_id}" href="__URL__/showPatientZhuyuanDetail/zhuyuan_id/{$search_result.zhuyuan_id}/yiyuan_id/{$search_result.yiyuan_id}/xingming/{$search_result.xingming}/zhuangtai/{$search_result.zhuangtai}/special_info/{$search_result.special_info}">
+						<td style="width:20%">{$search_result.zhuyuan_id}</td>
+						<td style="width:15%">{$search_result.zhuyuan_chuanghao}</td>
+						<td style="width:20%">{$search_result.xingming}</td>
+						<td style="width:10%">{$search_result.nianling}</td>
+						<td style="width:10%">{$search_result.xingbie}</td>
+						<td style="width:10%">{$search_result.ruyuan_zhenduan}</td>
+						<td style="width:5%">{$search_result.zhuangtai}</td>
+						<td style="width:5%">{$search_result.guidang_zhuangtai}</td>
+				</tr>
+			<elseif condition="$search_result['zhuangtai']!='住院中' and $search_result['zhuangtai']!='住院中   '"/>
+				<tr class="list_content zhuangtai_yichuyuan"  zhuyuan_id="{$search_result.zhuyuan_id}" href="__URL__/showPatientZhuyuanDetail/zhuyuan_id/{$search_result.zhuyuan_id}/yiyuan_id/{$search_result.yiyuan_id}/xingming/{$search_result.xingming}/zhuangtai/{$search_result.zhuangtai}/special_info/{$search_result.special_info}">
+						<td style="width:20%">{$search_result.zhuyuan_id}</td>
+						<td style="width:15%">{$search_result.zhuyuan_chuanghao}</td>
+						<td style="width:20%">{$search_result.xingming}</td>
+						<td style="width:10%">{$search_result.nianling}</td>
+						<td style="width:10%">{$search_result.xingbie}</td>
+						<td style="width:10%">{$search_result.ruyuan_zhenduan}</td>
+						<td style="width:5%">{$search_result.zhuangtai}</td>
+						<td style="width:5%">{$search_result.guidang_zhuangtai}</td>
+				</tr>
+			<else />
+				<tr class="list_content"  zhuyuan_id="{$search_result.zhuyuan_id}" href="__URL__/showPatientZhuyuanDetail/zhuyuan_id/{$search_result.zhuyuan_id}/yiyuan_id/{$search_result.yiyuan_id}/xingming/{$search_result.xingming}/zhuangtai/{$search_result.zhuangtai}/special_info/{$search_result.special_info}">
+						<td style="width:20%">{$search_result.zhuyuan_id}</td>
+						<td style="width:15%">{$search_result.zhuyuan_chuanghao}</td>
+						<td style="width:20%">{$search_result.xingming}</td>
+						<td style="width:10%">{$search_result.nianling}</td>
+						<td style="width:10%">{$search_result.xingbie}</td>
+						<td style="width:10%">{$search_result.ruyuan_zhenduan}</td>
+						<td style="width:5%">{$search_result.zhuangtai}</td>
+						<td style="width:5%">{$search_result.guidang_zhuangtai}</td>
+				</tr>
+			</if>
+		</volist>
+	</table>
+		
+	<table id="nav_table" class="title_table">
+		<tr class="without_event">
+			<td style=" width:400px;">
+				<input type="button" id="first_page" value="首页" class="button_medium"/>&nbsp;&nbsp;
+				<if condition="$current_page_number gt 1">
+					<input type="button" id="previous_page" value="前页" class="button_medium"/>&nbsp;&nbsp;
+				</if>
+				第
+				<select name="menu1" onchange="MM_jumpMenu('self',this,0)" target="_blank">
+				<if condition="$page != 1">
+						<option value="__ACTION__/page/{$current_page_number}/keyword/{$keyword}/selection_condition/{$selection_condition}">{$current_page_number}</option>
+				</if>
+				<?php
+						for ($i = 1; $i <= $total_page_number; $i++)
+						{
+					?>
+							 	<option value="__ACTION__/page/<?php echo $i; ?>/keyword/{$keyword}/selection_condition/{$selection_condition}"><?php echo $i; ?></option>;
+					<?php
+						}
+					?>
+				</select>
+				页&nbsp;&nbsp;
+				
+				<if condition="($current_page_number lt $total_page_number)">
+					<input type="button" id="next_page" value="后页" class="button_medium"/>&nbsp;&nbsp;
+				</if>
+				<input type="button" id="last_page" value="末页" class="button_medium"/>&nbsp;&nbsp;
+			</td>
+			<td style=" width:200px;">
+				每页显示{$one_page_amount}条/共{$total_amount}条
+			</td>
+		</tr>
+	</table>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+<script type="text/javascript">
+	server_url = "{$Think.config.WEB_HOST}";
+
+	//关闭加载条
+	try{parent.loadingEnd();}catch(ex){}
+
+	// 页面跳转
+	function MM_jumpMenu(targ,selObj,restore)
+	{ //v3.0
+	  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+	  if (restore) selObj.selectedIndex=0;
+	}
+	$("#first_page").click(function(){
+		window.location.href="__ACTION__/keyword/{$keyword}/selection_condition/{$selection_condition}";
+	});
+	$("#previous_page").click(function(){
+		window.location.href="__ACTION__/page/{$current_page_number-1}/keyword/{$keyword}/selection_condition/{$selection_condition}";
+	});
+	$("#next_page").click(function(){
+		window.location.href="__ACTION__/page/{$current_page_number+1}/keyword/{$keyword}/selection_condition/{$selection_condition}";
+	});
+	$("#last_page").click(function(){
+		window.location.href="__ACTION__/page/{$total_page_number}/keyword/{$keyword}/selection_condition/{$selection_condition}";
+	});
+	
+	$("#suoyou_patient").click(function(){
+		window.location.href="__ACTION__/selection_condition/suoyou_patient";
+	});
+
+	$(".guidang_search").click(function(){
+		var guidang_zhuangtai = $(this).attr("guidang_zhuangtai");
+		window.location.href="__ACTION__/guidang_zhuangtai/"+guidang_zhuangtai;
+	});
+	
+	$("#my_patient").click(function(){
+		window.location.href="__ACTION__";
+	});
+	
+	$(function(){
+		//鼠标经过样式变化处
+		$(".list_content").hover(
+			function () {
+				$(this).addClass("tr_hover");
+			},
+			function () {
+				$(this).removeClass("tr_hover");
+			}
+		);
+		//超链接无虚线框处
+		$("a").focus(
+			function () {
+				$(this).blur(); //得到焦点与失去焦点效果一致
+			}
+		);
+	})
+		xingming=encodeURI("{$search_result.xingming}");
+		xingming=encodeURI(xingming);
+			zhuangtai=encodeURI("{$search_result.zhuangtai}");
+			special_info=encodeURI("{$search_result.special_info}");
+	   
+	$(".list_content").click(function () {
+		if(!$(this).is(".yiguidang"))
+		{
+				
+			server_url = "{$Think.config.WEB_HOST}";
+			parent.last_conframe_content = window.location.href;
+			
+			$s= "http://"+server_url+"/web_emr/ZhuyuanYishi/Patient/showPatientZhuyuanDetail/zhuyuan_id/"+{$search_result.zhuyuan_id}+"/yiyuan_id/"+
+			{$search_result.yiyuan_id}+"/xingming/"+xingming+"/zhuangtai/"+zhuangtai+"/special_info/"+special_info ;
+			window.location.href = $s;
+			parent.current_conframe_content = $(this).attr("href");
+			parent.current_zhuyuan_id = $(this).attr("zhuyuan_id");
+		}
+</script>
+</body>
+</html>

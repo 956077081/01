@@ -1,0 +1,40 @@
+.nation {
+	background:#fcfefa;
+	width:600px;
+	margin:0 auto;
+	padding:5px;
+	z-index:10;
+}
+.nation_content {
+	height:300px;
+	margin:10px 0 10px 10px;
+	background:#fff;
+	border:1px solid #bfe16c;
+}
+.nation_content {
+	width:600px;
+	float:left;
+	overflow-y:scroll;
+}
+
+.nation_content ul li {
+	width:100px;
+	float:left;
+	cursor:pointer;
+}
+.nation_content ul li:hover {
+	background-color:#CAF2C8;
+	color:#0C6;
+}
+.nation_button {
+	float:right;
+	width:60px;
+	height:30px;
+	margin:10px 10px 0px 0px;
+	background:#5eacea;
+	color:#fff;
+	cursor:pointer;
+}
+.nation_button:hover {
+	background:#b6dc82;
+}

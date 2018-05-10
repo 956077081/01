@@ -1,0 +1,158 @@
+﻿@charset "utf-8";
+body,html,div { margin:0px; padding:0px;}
+html {overflow-y:hidden;}
+body {
+	background-image: url(./images/login_background.png);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	background-color: #AACCEE;
+}
+.login_box {
+	margin:0 auto;
+	height: 175px;
+	width: 600px;
+	margin-top: 250px;
+}
+.input_area{
+	padding:0px;
+	margin-left:170px;
+	margin-top:50px;
+	float:left;
+	width:200px;
+	height:80px;
+}
+.control_area{
+	padding:0px;
+	margin-top:5px;
+	margin-right:17px;
+	float:right;
+	width:173px;
+	height:auto;
+}
+.large_login_button{
+	padding:0px;
+	float:right;
+	width:173px;
+	height:170px;
+	background:transparent;
+	border:0px;
+	cursor:pointer;
+	}
+.large_login_button:hover{
+	width:173px;
+	height:170px;
+	background-image: url(./images/large_login_button_hover.gif);
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	}
+.user_name_input{
+	margin-left:28px;
+	margin-top:4px;
+	width:169px;
+	height:23px;
+	line-height:22px;
+	border:0px;
+	float:left;
+	background:transparent;
+	}
+*+html .user_name_input{
+	margin-left:-145px;
+	margin-top:5px;
+	clear:both;
+	width:169px;
+	height:23px;
+	line-height:22px;
+	float:left;
+	background:transparent;
+	}
+.user_password_input{
+	margin-left:28px;
+	margin-top:20px;
+	width:169px;
+	height:23px;
+	line-height:22px;
+	border:0px;
+	background:transparent;
+	}
+*+html .user_password_input{
+	margin-left:-145px;
+	clear:both;
+	margin-top:18px;
+	width:169px;
+	height:23px;
+	line-height:22px;
+	border:0px;
+	background:transparent;
+	}
+.login_tips{
+	margin:0 auto;
+	height: auto;
+	width: 280px;
+	margin-top: 5px;
+	text-align:left;
+	font-size:14px;
+	color:#FFF;
+	line-height:23px;
+	font-family:"楷体";
+}
+.login_tips{
+	margin:0 auto;
+	height: auto;
+	width: 280px;
+	margin-top: 5px;
+	text-align:left;
+	font-size:16px;
+	color:red;
+	line-height:23px;
+	font-family:"楷体";
+}
+.login_info{
+	margin:0 auto;
+	height: auto;
+	width: 280px;
+	margin-top: 10px;
+	text-align:left;
+	font-size:16px;
+	color:white;
+	line-height:23px;
+	font-family:"楷体";
+}
+.list_content {
+	cursor:pointer;
+}
+.submit_button{
+	background:url(./images/button_search.png) no-repeat;
+	width:76px;
+	height:30px;
+	line-height:20px;
+	text-align:center;
+	cursor:pointer;
+	border:none;
+	color:#fff;
+}
+.submit_button:hover {
+	background:url(./images/button_search_hover.png) no-repeat center center;
+}
+
+.keshi_login{
+	width: 280px;
+}
+
+.keshi_item{
+	background:#0066FF;
+	color:white;
+	height: 50px;
+	width: 250px;
+	cursor:pointer;
+	margin-left:15px;
+	border: 2px solid #7ab0de;
+	border-radius:15px;
+	text-align:center;
+	font-size:20px;
+	font-weight:bold;
+	line-height:50px;
+}
+
+.keshi_item:hover {
+	background:#00BBFF;
+}

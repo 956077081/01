@@ -1,0 +1,248 @@
+@charset "utf-8";
+html,body,div,ul,li,dt,dd,a { margin:0px; padding:0px;list-style:none;font-family:"ALKATIP Asliye"}
+html {overflow-y:hidden;}
+.head {
+	height:50px;
+	width:100%;
+	overflow:hidden;
+	position:fixed;
+	top:0px;
+	z-index:10;
+	background:url(./images/function_background.png);
+}
+.head .function_button{
+	cursor:pointer;
+	font-size:12px;
+	font-weight:bold;
+	border:1px solid #27a3f9;
+	display:block;
+	float:left;
+	min-width:120px;
+	text-align:center;
+	margin-right:5px;
+	margin-left:5px;
+	margin-top:2px;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:4px;
+	padding-right:4px;
+	background-color:#B0DDFD;
+	height:40px;
+	-moz-border-radius:5px;	/* Gecko browsers */
+	-webkit-border-radius:5px;	/* Webkit browsers */
+	border-radius:5px;	/* W3C syntax */
+}
+.head .function_button:hover{
+	color:blue;
+}
+.head #logo{
+	height:50px;
+	background:url(./images/logo.png);
+	width:300px;
+	display:block;
+	float:left;
+	margin-right:20px;
+}
+.container {
+	width:100%;
+	height:100%;
+}
+.left_menu {
+	margin:0px;
+	padding:0px;
+	width:180px;
+	overflow:auto;
+	position:fixed;
+	left:0px;
+	top:50px;
+	bottom: 5px;
+}
+.left_menu li{
+	margin:8px;
+	width:80%;
+}
+.left_menu .function_button{
+	cursor:pointer;
+	font-size:12px;
+	font-weight:bold;
+	border:1px solid #27a3f9;
+	display:block;
+	width:100%;
+	text-align:center;
+	padding:4px;
+	background-color:#B0DDFD;
+}
+.left_menu .function_button:hover{
+	color:blue;
+}
+.nav_info{
+	padding-top:5px;
+	padding-left:10px;
+	color:blue;
+	font-size:14px;
+	font-weight:bold;
+}
+#yiyuan_qiehuan{
+	cursor:pointer;
+}
+#bingli_tree{
+	border-top:2px solid #B0DDFD;
+	margin-top:5px;
+	font-size:16px;
+	width:90%;
+}
+
+li.noSubMenuMuban{
+	margin:0px;
+	width:100%;
+	height:40px;
+	margin-top:5px;
+	border-bottom:1px solid #B0DDFD;
+	padding-left:10px;
+	padding-top:4px;
+	padding-bottom:4px;
+	background-color:#DAEFFE;
+}
+
+li.noSubMenu{
+	margin:0px;
+	width:100%;
+	height:auto;
+	margin-top:5px;
+	border-bottom:1px solid #B0DDFD;
+	padding-left:10px;
+	padding-top:4px;
+	padding-bottom:4px;
+	background-color:#DAEFFE;
+}
+
+#bingli_tree a{
+	display:block;
+}
+#bingli_tree a:hover{
+	color:#27a3f9;
+	cursor:pointer;
+}
+#bingli_tree a img{
+	float: left;
+	padding-bottom:0px;
+	padding-right: 5px;
+}
+
+.noSubMenuMuban a{
+	margin-top: 12px;
+}
+
+#bingli_tree ul{
+	padding-left:15px;
+}
+.right_content {
+	padding:0px;
+	position:fixed;
+	position: absolute;
+	z-index:0;
+}
+*+html .right_content {
+	padding:0px;
+	position:fixed;
+	position: absolute;
+	z-index:0;
+}
+.right_content {
+	top:50px;
+	right:0px;
+	bottom: 5px;
+	left:180px;
+	border-left:1px solid #27a3f9;
+}
+.conframe {
+	width:100%;
+	height:100%;
+	margin:0px;
+}
+*+html .conframe {
+	width:100%;
+	height:100%;
+	float:left;
+	margin:0px;
+	padding:0px;
+	position:absolute;
+}
+.footer {
+	height:0px;
+	background:url(./images/background_footer.png) repeat-x;
+	width:100%;
+	clear:both;
+	position:fixed;
+	bottom:0px;
+}
+*+html .footer {
+	height:30px;
+	background:url(./images/background_footer.png) repeat-x;
+	width:100%;
+	clear:both;
+	position:fixed;
+	bottom:15px;
+}
+#print{
+	background:url(./images/menu_icon/dayin.png);
+	text-indent:25px;
+	float:right;
+}
+#preview{
+	background:url(./images/menu_icon/yulan.png);
+	text-indent:25px;
+	float:right;
+}
+#logout{
+	background:url(./images/menu_icon/logout.png);
+	text-indent:25px;
+	float:right;
+}
+#user_info{
+	float:right;
+	text-align:left;
+	margin-left:5px;
+	font-weight:normal;
+}
+
+.bingli_add_button{
+	background:url(./images/bingli_add_button.png) no-repeat;
+	width:80px;
+	height:30px;
+	line-height:center;
+	text-align:center;
+	cursor:pointer;
+	border:none;
+	color:#fff;
+}
+.bingli_add_button:hover{
+	background:url(./images/bingli_add_button_hover.png) no-repeat;
+}
+.submit_button{
+	background:url(./images/button_search.png) no-repeat;
+	width:76px;
+	height:30px;
+	line-height:20px;
+	text-align:center;
+	cursor:pointer;
+	border:none;
+	color:#fff;
+}
+.submit_button:hover{
+	background:url(./images/button_search_hover.png) no-repeat center center;
+}
+.system_tips{
+	display:none;
+	width:100%;
+	height:100px;
+	background-color:white;
+	color:red;
+	font-size:16px;
+	text-align:left;
+	padding:5px;
+	position:fixed;
+	bottom:0px;
+	z-index:10002;
+	border-top:2px solid blue;
+}

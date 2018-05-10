@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/Lodop_jquery_plugin.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/printer_control.js" ></script>
+<script type="text/javascript">
+	server_url = "{$Think.config.WEB_HOST}";
+	action_url = "http://{$Think.config.WEB_HOST}/web_emr/Common/BingliEditor/saveBingli";
+
+	//是否开启各种处理引擎
+	revise = "{$Think.session.revise}";
+	multi_media_engine = "{$Think.config.multi_media_engine}";
+	show_page_number = true;
+	
+		$(function(){
+			controlPrinterByLodop();
+		});
+</script>
+	<title>门诊病历</title>
+</head>
+
+<body>
+hehe
+</body>
+</html>

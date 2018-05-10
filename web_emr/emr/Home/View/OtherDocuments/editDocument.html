@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<title>添加知情同意书</title>
+	<load href='__PUBLIC__/css/themes/base/jquery.ui.all.css' />
+	<load href='__PUBLIC__/css/tiantan_ui.css' />
+		
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.16.custom.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/tiantanAllinOneEditor.js" ></script>
+</head>
+
+<body>
+	<form class="edit_form" method="post" action="__URL__/addOne">
+	<div class="list_title"><div class="list_title_span">添加其它文书</div></div>
+		<table class="edit_form_table" cellpadding="0" cellspacing="0" >
+			<tr>
+				<td width="160px" class="info_title" >文书类别：</td>
+				<td width="220px" class="info_input" >
+					<input name="category" value="{$document_info.category}"/>
+				</td>
+				<td width="280px" class="info_tips">
+				<span class="onFocus" name="tips_message" id="zhiqingshu_type_tishi">文书类别</span>
+				</td>
+				<td>
+				<a class="detail_info" detail_info="文书类别"><img title="" src="__PUBLIC__/css/images/input_tips.png" align="absmiddle"/></a>
+				</td>
+	    </tr>
+			<tr>
+				<td class="info_title" >文书名称：</td>
+				<td class="info_input" >
+					<input name="zhongwen_mingcheng" value="{$document_info.zhongwen_mingcheng}"/>
+				</td>
+				<td class="info_tips">
+					<span class="onFocus" name="tips_message">文书名称</span>
+				</td>
+				<td>
+					<a class="detail_info" detail_info="文书名称"><img title="" src="__PUBLIC__/css/images/input_tips.png" align="absmiddle"/></a>
+				</td>
+			</tr>
+		</table>
+		<br/>
+	</form>
+	<div name="tiantan_editor" style="height:500px;width:100%;z-index:1"></div>
+	<script>
+		document_category = "{$Think.session.user_kebie}";
+		server_url = "{$Think.config.WEB_HOST}";
+		zhuyuan_id = "{$zhuyuan_id}";
+		$(document).ready(function(){
+			var document_url =  'http://'+server_url+'/tiantan_emr/Public/zhiqingtongyishu/{$document_info.category}/{$document_info.zhongwen_mingcheng}';
+			var document_type = '{$document_info.document_type}';
+			initialEditorWithDocument("tiantan_editor",document_url,document_type);
+			try{parent.loadingEnd();}catch(ex){}
+		});
+	</script>
+</body>
+</html>

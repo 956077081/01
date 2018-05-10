@@ -1,0 +1,175 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8.0" />
+	<title>添加知情同意书</title>
+	<load href='__PUBLIC__/css/themes/base/jquery.ui.all.css' />
+	<load href='__PUBLIC__/css/tiantan_ui.css' />
+		
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.16.custom.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/js/tiantanAllinOneEditor.js" ></script>
+	
+</head>
+
+<body>
+	<form class="edit_form" method="post" action="__URL__/addOne">
+	<div class="list_title"><div class="list_title_span">添加其它文书</div></div>
+		<table class="edit_form_table" cellpadding="0" cellspacing="0" >
+			<tr>
+				<td width="160px" class="info_title" >选择所属类别：</td>
+				<td width="220px" class="info_input" >
+					<input name="category" value="{$Think.session.user_kebie}"/>
+				</td>
+				<td width="280px" class="info_tips">
+				<span class="onFocus" name="tips_message" id="zhiqingshu_type_tishi">请选择其它文书的类别</span>
+				</td>
+				<td>
+				<a class="detail_info" detail_info="其它文书的类别"><img title="" src="__PUBLIC__/css/images/input_tips.png" align="absmiddle"/></a>
+				</td>
+	    </tr>
+			<tr>
+				<td class="info_title" >文书名称：</td>
+				<td width="220px" class="info_input" >
+					<input name="zhongwen_mingcheng" />
+				</td>
+				<td width="280px" class="info_tips">
+					<span class="onFocus" name="tips_message">请选择文书名称</span>
+				</td>
+				<td>
+					<a class="detail_info" detail_info="文书名称"><img title="" src="__PUBLIC__/css/images/input_tips.png" align="absmiddle"/></a>
+				</td>
+			</tr>
+		</table>
+		<br/>
+		<div id="jiancha_jieguo">
+			<table class="edit_form_table" cellpadding="0" cellspacing="0" >
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2" class="info_input" >
+						<input name="zhuyuan_id" type="hidden" value="{$zhuyuan_id}" />
+						<input name="data_document_id" type="hidden" value="" />
+						<input name="document_type" type="hidden" value="" />
+						<input type="submit"  class="submit_button" value="提交" />&nbsp;&nbsp;
+						<input type="reset" class="reset_button"  value=" 重 置 " />
+					</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div name="tiantan_editor" style="height:500px;width:100%;z-index:1"></div>
+	<script>
+		document_category = "{$Think.session.user_kebie}";
+		server_url = "{$Think.config.WEB_HOST}";
+		zhuyuan_id = "{$zhuyuan_id}";
+		$(document).ready(function(){
+			try{parent.loadingEnd();}catch(ex){}
+			
+			$("form").submit(function(e){
+				if($('[name="zhiqingshu_mingcheng"]').val() == "0")
+				{
+					$('[name="zhiqingshu_mingcheng"]').parent().parent().css("background-color","#C36");
+					return false;
+				}
+			});
+			
+			$('[type="reset"]').click(function(){
+				$('[name="tiantan_editor"]').html("");
+			});
+			
+			$("[name='category']").live("focus",function(){
+				var cache_lingshou_danwei = {},lastXhr_lingshou_danwei;
+				$(this).autocomplete({
+					minLength: 0,
+					autoFocus: true,
+					source: function( request, response ) {
+						term = "";
+						if ( term in cache_lingshou_danwei ) {
+							response( cache_lingshou_danwei [ term ] );
+							return;
+						}
+						lastXhr_lingshou_danwei = $.getJSON( 'http://'+server_url+'/tiantan_emr/Common/Data/getOtherDocumentCategory',{"term":term }, function( data, status, xhr ) {
+						cache_lingshou_danwei [ term ] = data;
+						if ( xhr === lastXhr_lingshou_danwei ) {
+							response( data );
+						}
+					});
+					},
+					select: function( event, ui ) {
+						$(this).val( ui.item.label );
+						document_category = ui.item.label;
+						$("[name='zhongwen_mingcheng']").val("");
+						return false;
+					}
+				})
+				.data( "autocomplete" )._renderItem = function( ul, item ) {
+					var label = item.label.replace(
+									new RegExp(
+										"(?![^&;]+;)(?!<[^<>]*)(" +
+										term +
+										")(?![^<>]*>)(?![^&;]+;)", "gi"
+									), "<span class=\"keyword\">$1</span>" );
+					return $( "<li></li>" )
+						.data( "item.autocomplete", item )
+						.append( "<a>" + label + "</a>" )
+						.appendTo( ul );
+				};
+				var e = jQuery.Event("keydown");
+				e.keyCode = 40; 
+				$(this).trigger(e);
+			})
+
+			$("[name='zhongwen_mingcheng']").live("focus",function(){
+				var cache_lingshou_danwei = {},lastXhr_lingshou_danwei;
+				$(this).autocomplete({
+					minLength: 0,
+					autoFocus: true,
+					source: function( request, response ) {
+						term = request.term;
+						if ( term in cache_lingshou_danwei ) {
+							response( cache_lingshou_danwei [ term ] );
+							return;
+						}
+						lastXhr_lingshou_danwei = $.getJSON( 'http://'+server_url+'/tiantan_emr/Common/Data/getOtherDocumentZhongwenMingcheng',{"category":document_category, "term":term }, function( data, status, xhr ) {
+						cache_lingshou_danwei [ term ] = data;
+						if ( xhr === lastXhr_lingshou_danwei ) {
+							response( data );
+						}
+					});
+					},
+					select: function( event, ui ) {
+						$(this).val( ui.item.label );
+						$("[name='data_document_id']").val( ui.item.id );
+						$("[name='document_type']").val( ui.item.document_type );
+						if(ui.item.id != "")
+						{
+							var id = ui.item.id;
+							var document_url =  'http://'+server_url+'/tiantan_emr/Public/zhiqingtongyishu/'+ui.item.category+'/'+ui.item.zhongwen_mingcheng;
+							var document_type = ui.item.document_type;
+							initialEditorWithDocument("tiantan_editor",document_url,document_type);
+						}
+						return false;
+					}
+				})
+				.data( "autocomplete" )._renderItem = function( ul, item ) {
+					var label = item.label.replace(
+									new RegExp(
+										"(?![^&;]+;)(?!<[^<>]*)(" +
+										term +
+										")(?![^<>]*>)(?![^&;]+;)", "gi"
+									), "<span class=\"keyword\">$1</span>" );
+					return $( "<li></li>" )
+						.data( "item.autocomplete", item )
+						.append( "<a>" + label + "</a>" )
+						.appendTo( ul );
+				};
+				var e = jQuery.Event("keydown");
+				e.keyCode = 40; 
+				$(this).trigger(e);
+			})
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.mazui {
+	display:none;
+	background:#fcfefa;
+	border:1px solid #bfe16c;
+	width:600px;
+	margin:0 auto;
+	padding:5px;
+	z-index:10;
+}
+.mazui_content {
+	height:430px;
+	margin:10px 0 10px 10px;
+	background:#fff;
+	border:1px solid #bfe16c;
+}
+.mazui_content {
+	width:600px;
+	/*float:left;*/
+	overflow-y:scroll;
+}
+
+.mazui_content ul li {
+	width:250px;
+	float:left;
+	cursor:pointer;
+}
+.mazui_content ul li:hover {
+	background-color:#CAF2C8;
+	color:#0C6;
+}
+
+.mazui_search_input {
+	margin-left: 10px;
+}
+
+.mazui_search_button,.mazui_show_all_button {
+	width: 72px;
+	height: 28px;
+	cursor: pointer;
+	background: url("../../../css/images/button_search.png") no-repeat center center;
+}
+
+.mazui_search_button:hover,.mazui_show_all_button:hover {
+	background: url("../../../css/images/button_search_hover.png") no-repeat center center;
+}
+
+mazuikw {
+	background-color: blue;
+}
