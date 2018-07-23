@@ -1,0 +1,39 @@
+[ 2015-03-18T11:33:45+08:00 ] 127.0.0.1 /index.php/Admin/Manager/left
+ERR: XML标签语法错误 : condition='$vo2['auth_pid'] eq $vo1['auth_id']'
+
+[ 2015-03-18T14:45:02+08:00 ] 127.0.0.1 /index.php/Admin/Role/distribute/role_id/1
+ERR: XML标签语法错误 : condition='$vo2['auth_pid'] eq $vo1['auth_id']'
+
+[ 2015-03-18T16:39:59+08:00 ] 192.168.42.44 /index.php/Admin/Authority/addAuth
+ERR: SQLSTATE[HY000]: General error: 1364 Field 'auth_path' doesn't have a default value
+
+[ 2015-03-18T16:40:11+08:00 ] 127.0.0.1 /index.php/Admin/Authority/addAuth
+ERR: SQLSTATE[HY000]: General error: 1364 Field 'auth_path' doesn't have a default value
+
+[ 2015-03-18T16:40:17+08:00 ] 192.168.42.44 /index.php/Admin/Authority/addAuth
+ERR: SQLSTATE[HY000]: General error: 1364 Field 'auth_path' doesn't have a default value
+
+[ 2015-03-18T16:40:49+08:00 ] 192.168.42.44 /index.php/Admin/Authority/addAuth
+ERR: SQLSTATE[HY000]: General error: 1364 Field 'auth_path' doesn't have a default value
+
+[ 2015-03-18T16:41:36+08:00 ] 192.168.42.44 /index.php/Admin/Authority/addAuth
+ERR: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'auth_name' at row 1
+
+[ 2015-03-18T16:43:27+08:00 ] 192.168.42.44 /index.php/Admin/Authority/addAuth
+ERR: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'auth_name' at row 1
+
+[ 2015-03-18T16:46:31+08:00 ] 192.168.42.44 /index.php/Admin/Role/distribute/role_id/2
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'role_auth_ids' cannot be null
+
+[ 2015-03-18T16:46:41+08:00 ] 192.168.42.44 /index.php/Admin/Role/add
+ERR: 非法操作:add
+
+[ 2015-03-18T16:49:38+08:00 ] 192.168.42.44 /index.php/Admin/Role/distribute/role_id/2
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'role_auth_ids' cannot be null
+
+[ 2015-03-18T16:54:28+08:00 ] 192.168.42.53 /index.php/Admin/Goods/brand
+ERR: 非法操作:brand
+
+[ 2015-03-18T17:02:08+08:00 ] 192.168.42.53 /index.php/Admin/Goods/brand
+ERR: 非法操作:brand
+

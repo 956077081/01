@@ -1,0 +1,523 @@
+[ 2015-03-14T15:21:38+08:00 ] 127.0.0.1 /index.php/Home/Index/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000983s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000535s ]
+
+[ 2015-03-14T15:23:21+08:00 ] 127.0.0.1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002018s ]
+
+[ 2015-03-14T15:52:05+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2015-03-14T15:52:10+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000351s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2015-03-14T15:52:26+08:00 ] 127.0.0.1 /index.php/Home/goods
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000716s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000807s ]
+
+[ 2015-03-14T15:52:39+08:00 ] 127.0.0.1 /index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000944s ]
+
+[ 2015-03-14T16:02:52+08:00 ] 127.0.0.1 /index.php?m=home&c=goods&a=show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000631s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2015-03-14T16:03:50+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000845s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000981s ]
+
+[ 2015-03-14T16:05:20+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000436s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000450s ]
+
+[ 2015-03-14T16:07:40+08:00 ] 127.0.0.1 /index.php?s=/home/gods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001710s ]
+ERR: 无法加载控制器:Gods
+
+[ 2015-03-14T16:07:46+08:00 ] 127.0.0.1 /index.php?s=/home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000405s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000455s ]
+
+[ 2015-03-14T16:19:08+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000106s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006587s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006668s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2015-03-14T16:19:11+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005836s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000586s ]
+
+[ 2015-03-14T16:24:50+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+
+[ 2015-03-14T16:25:05+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000332s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008403s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008508s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001816s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001930s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007234s ]
+
+[ 2015-03-14T16:27:05+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000339s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009583s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009724s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000520s ]
+
+[ 2015-03-14T16:27:08+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000306s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001607s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001012s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001134s ]
+
+[ 2015-03-14T16:27:11+08:00 ] 127.0.0.1 /index.php/Home/goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004373s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004460s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000729s ]
+
+[ 2015-03-14T16:27:24+08:00 ] 127.0.0.1 /index.php/Home/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007545s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000822s ]
+
+[ 2015-03-14T16:27:53+08:00 ] 127.0.0.1 /index.php/Home/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005898s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005979s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000850s ]
+
+[ 2015-03-14T16:29:57+08:00 ] 127.0.0.1 /index.php/Home/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000406s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015343s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015468s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2015-03-14T16:51:58+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007087s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007172s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000767s ]
+
+[ 2015-03-14T16:52:00+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004557s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000394s ]
+
+[ 2015-03-14T16:52:13+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010081s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2015-03-14T16:53:36+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010789s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010860s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000188s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000778s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2015-03-14T16:53:46+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\IndexController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013053s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013132s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2015-03-14T17:07:13+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 12 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2015-03-14T17:07:34+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 12 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2015-03-14T17:08:27+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 13 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000682s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000835s ]
+
+[ 2015-03-14T17:08:29+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 13 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2015-03-14T17:08:35+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000928s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 13 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000906s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001011s ]
+
+[ 2015-03-14T17:09:12+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000564s ]
+
+[ 2015-03-14T17:10:17+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+
+[ 2015-03-14T17:10:22+08:00 ] 127.0.0.1 /index.php/Home/goods/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+NOTIC: [2048] Declaration of Home\Controller\GoodsController::show() should be compatible with that of Think\Controller::show() F:\wamp\apache\htdocs\Application\Home\Controller\GoodsController.class.php 第 17 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000564s ]
+

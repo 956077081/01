@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        您的成绩是：{$score}<br>
+    <if condition='$score egt 90'>
+        孩子，你是我的骄傲
+    <elseif condition='$score egt 80'/>
+        好样的，宝贝
+    <elseif condition='$score egt 70'/>
+        你离优秀不远了
+    <elseif condition='$score egt 60'/>
+        看来你还是有潜力的
+   <else/>
+        看来你不努力是不行了
+    </if>
+    
+    <hr>
+    
+    <for start='1' end='100' step='10' name='a'>
+        {$a}:锄禾日当午<br>
+    </for>
+    
+    </body>
+</html>

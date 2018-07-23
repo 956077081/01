@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <form name="form1" method="post" action="__SELF__">
+    <dl>
+    <foreach name='info1' item='vo1'>
+    	<dt>
+        	<if condition="in_array($vo1['auth_id'],$role_auth_id_array)">
+            	<input type="checkbox" name="auth[]" value="{$vo1.auth_id}" checked="checked" />
+            <else/>
+            	<input type="checkbox" name="auth[]" value="{$vo1.auth_id}" />
+            </if>
+        	{$vo1.auth_name}
+        </dt>
+        
+        <foreach name='info2' item='vo2'>
+       	  <if condition="$vo2['auth_pid'] eq $vo1['auth_id']">
+            	<dd>
+                <if condition="in_array($vo2['auth_id'],$role_auth_id_array)">
+                	<input type="checkbox" name="auth[]" value="{$vo2.auth_id}" checked='checked' />
+                <else/>
+                	<input type="checkbox" name="auth[]" value="{$vo2.auth_id}" />
+                </if>
+                {$vo2.auth_name}
+                
+            </dd>
+            </if>
+        </foreach>
+    </foreach>
+    </dl>
+    <input type="submit" name="button" id="button" value="提交">
+    </form>
+    </body>
+</html>

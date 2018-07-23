@@ -1,0 +1,27 @@
+[ 2015-03-16T09:46:25+08:00 ] 127.0.0.1 /index.php/Admin/Goods/css/mine.css
+ERR: 非法操作:css
+
+[ 2015-03-16T09:47:42+08:00 ] 127.0.0.1 /index.php/Admin/Goods/css/mine.css
+ERR: 非法操作:css
+
+[ 2015-03-16T09:54:36+08:00 ] 127.0.0.1 /index.php/Admin/Goods/admin.php?c=goods&a=add
+ERR: 非法操作:admin.php
+
+[ 2015-03-16T10:08:39+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: 'aa' for column 'goods_price' at row 1
+
+[ 2015-03-16T11:01:46+08:00 ] 192.168.42.44 /index.php/Admin/goods/test2.html
+ERR: 非法操作:test2
+
+[ 2015-03-16T11:06:23+08:00 ] 192.168.42.44 /index.php/Admin/Goods/add
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '' for column 'goods_price' at row 1
+
+[ 2015-03-16T11:06:36+08:00 ] 192.168.42.44 /index.php/Admin/Goods/add
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '&lt;script&gt;alert();&lt;/script&gt;' for column 'goods_price' at row 1
+
+[ 2015-03-16T11:13:30+08:00 ] 192.168.42.44 /index.php/Admin/Goods/add
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '&lt;script&gt;alert();&lt;/script&gt;' for column 'goods_price' at row 1
+
+[ 2015-03-16T14:53:58+08:00 ] 192.168.42.40 /index.php/admin/login
+ERR: 非法操作:index
+

@@ -1,0 +1,15 @@
+[ 2015-03-17T09:29:21+08:00 ] 127.0.0.1 /index.php/Admin/Goods/showlists
+ERR: 非法操作:showlists
+
+[ 2015-03-17T11:34:40+08:00 ] 127.0.0.1 /index.php/Admin/Manager/left
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$auth_ids' in 'where clause'
+
+[ 2015-03-17T11:34:52+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Manager&a=left
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$auth_ids' in 'where clause'
+
+[ 2015-03-17T12:21:12+08:00 ] 127.0.0.1 /index.php/Admin/Role/distribute
+ERR: 参数错误或者未定义:role_id
+
+[ 2015-03-17T14:05:37+08:00 ] 127.0.0.1 /index.php/Admin/Authority/showloist
+ERR: 非法操作:showloist
+
